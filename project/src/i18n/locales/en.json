@@ -1,0 +1,370 @@
+{
+  "header": {
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "getStarted": "Get Started",
+    "language": "Language"
+  },
+  "earlyAccess": {
+    "banner": "Limited Early Access · Phase 1 unlocks Aug 15 2025",
+    "badge": "Phase 1 · Drops Aug 15",
+    "notice": {
+      "headline": "You're Getting Early Access",
+      "description": "Phase 1 rollout — arriving August 15 2025 — plus locked-in pricing and limited-time bonuses not available later.",
+      "benefits": [
+        "Access to Phase 1 on launch",
+        "All future phases monthly",
+        "Lifetime membership"
+      ]
+    },
+    "spotsLeft": "Only {count} of 300 founder spots left"
+  },
+  "hero": {
+    "headline": {
+      "main": "You keep choosing the pain you recognize. Let's change that.",
+      "micro": "Break the trauma bond. Rewire your patterns. Build self-trust—in your body, and in safe love."
+    },
+    "subtitle": {
+      "part1": "Break",
+      "part2": " the trauma bond. ",
+      "rewires": "Rewire",
+      "part3": " your patterns. ",
+      "selfTrust": "self-trust",
+      "part4": " in your body — and in ",
+      "safeLove": "safe love",
+      "part5": "."
+    },
+    "videoTitle": "Unbound Method Video Sales Letter",
+    "captionsAvailable": "Captions available - Click CC button in video player",
+    "english": "English",
+    "spanish": "Español",
+    "trustIndicators": {
+      "guarantee": "14-Day Guarantee",
+      "instantAccess": "Instant Access",
+      "scienceBased": "Science-Based"
+    }
+  },
+  "problem": {
+    "headline": {
+      "part1": "Your ",
+      "heart": "Heart",
+      "part2": " Keeps Leading You to the ",
+      "wrongPeople": "Wrong People"
+    },
+    "subtitle": {
+      "part1": "It's not your fault. Your nervous system is like a broken GPS – it's been programmed by past experiences to mistake ",
+      "intensity": "intensity",
+      "part2": " for intimacy, ",
+      "chaos": "chaos",
+      "part3": " for chemistry."
+    },
+    "cards": {
+      "overactiveAlarm": {
+        "title": "Overactive Alarm System",
+        "description": "Your nervous system treats healthy, available love as \"boring\" while lighting up for unavailable partners who trigger familiar patterns of activation."
+      },
+      "traumaBond": {
+        "title": "Trauma-Bond Magnet",
+        "description": "You unconsciously seek partners who recreate familiar dynamics, mistaking the stress response for \"spark\" and genuine connection."
+      },
+      "safetyForeign": {
+        "title": "Safety Feels Foreign",
+        "description": "When someone treats you well consistently, your system doesn't recognize it as love – it feels unfamiliar, even uncomfortable or \"too easy.\""
+      }
+    },
+    "quote": "You're not broken. You're not choosing wrong. Your nervous system is just following outdated programming that once kept you safe but now keeps you stuck."
+  },
+  "opportunity": {
+    "headline": "What If You Could Rewire Your Attraction Patterns?",
+    "subtitle": "Neuroscience shows us that the brain is remarkably plastic. With the right approach, you can literally rewire your nervous system to feel safe with healthy love.",
+    "method": {
+      "title": "The Attachment Rewiring Method™",
+      "description": "A scientifically-backed system that combines attachment theory, cognitive behavioral techniques, and mindfulness practices to help you recognize, interrupt, and rewire the patterns that keep you stuck.",
+      "socialProof": ""
+    },
+    "steps": {
+      "identify": {
+        "title": "Identify Patterns",
+        "description": "Recognize your unique trauma-bonding triggers and attachment wounds"
+      },
+      "rewire": {
+        "title": "Rewire Responses",
+        "description": "Create new neural pathways that recognize healthy love as safe"
+      },
+      "attract": {
+        "title": "Attract Differently",
+        "description": "Naturally gravitate toward emotionally available, secure partners"
+      }
+    }
+  },
+  "whoThisIsFor": {
+    "headline": "This Is For You If You're...",
+    "subtitle": "Emotionally intelligent women who are tired of the same painful patterns and ready to create lasting change.",
+    "profiles": {
+      "serialDater": {
+        "title": "Serial Dater",
+        "description": "You've been on countless dates but keep attracting the same type of emotionally unavailable person, wondering why your picker seems broken"
+      },
+      "patternRepeater": {
+        "title": "Pattern Repeater",
+        "description": "You recognize the cycle but can't seem to break it – every relationship feels like déjà vu with different faces but same dynamics"
+      },
+      "healthySabotager": {
+        "title": "Healthy Sabotager",
+        "description": "When someone treats you well consistently, you get uncomfortable and find ways to push them away or create drama"
+      },
+      "overthinker": {
+        "title": "Overthinker",
+        "description": "You analyze every text, every interaction, constantly seeking reassurance and validation while your mind spirals with worst-case scenarios"
+      },
+      "traumaBondSurvivor": {
+        "title": "Trauma Bond Survivor",
+        "description": "You've done years of therapy but still find yourself magnetically drawn to partners who recreate familiar patterns of pain"
+      },
+      "fixer": {
+        "title": "The Fixer",
+        "description": "You're attracted to 'potential' and believe you can heal or change your partners through enough love and understanding"
+      }
+    },
+    "quote": "If you're reading this and thinking 'this is me,' you're already more self-aware than most. That awareness is your superpower – now let's channel it into lasting change."
+  },
+  "valueProposition": {
+    "headline": {
+      "part1": "Transform Your ",
+      "loveLife": "Love Life",
+      "part2": " From the ",
+      "insideOut": "Inside Out"
+    },
+    "subtitle": {
+      "part1": "Stop settling for crumbs of affection. You deserve a ",
+      "part2": "love that feels safe, secure, and deeply fulfilling",
+      "part3": "."
+    },
+    "benefits": {
+      "breakFree": {
+        "title": "BREAK FREE",
+        "subtitle": "from toxic cycles",
+        "description": "Finally escape the exhausting pattern of attracting emotionally unavailable partners"
+      },
+      "rewire": {
+        "title": "REWIRE",
+        "subtitle": "attraction patterns",
+        "description": "Literally change your brain's response to healthy vs. unhealthy relationship dynamics"
+      },
+      "master": {
+        "title": "MASTER",
+        "subtitle": "triggers & boundaries",
+        "description": "Recognize your triggers before they hijack your decisions and set boundaries that stick"
+      },
+      "build": {
+        "title": "BUILD",
+        "subtitle": "secure, calm confidence",
+        "description": "Develop unshakeable self-worth that doesn't depend on external validation"
+      }
+    }
+  },
+  "scientificProof": {
+    "headline": "Grounded in Real Science, Not Empty Promises",
+    "subtitle": "The Unbound method combines decades of psychological research with practical, actionable strategies that create lasting change.",
+    "sciences": {
+      "attachmentTheory": {
+        "title": "Attachment Theory",
+        "description": "Understanding how early relationships shape your adult attachment patterns and romantic choices",
+        "citation": "Bowlby, J. (1988). A Secure Base: Parent-Child Attachment and Healthy Human Development"
+      },
+      "cbt": {
+        "title": "Cognitive Behavioral Therapy",
+        "description": "Evidence-based techniques to identify and change thought patterns that drive unhealthy relationship choices",
+        "citation": "Beck, A. T. (1976). Cognitive Therapy and the Emotional Disorders"
+      },
+      "emotionalIntelligence": {
+        "title": "Emotional Intelligence",
+        "description": "Developing the ability to recognize, understand, and manage your emotions in relationships",
+        "citation": "Goleman, D. (1995). Emotional Intelligence: Why It Matters More Than IQ"
+      },
+      "mindfulness": {
+        "title": "Mindfulness Practices",
+        "description": "Present-moment awareness techniques that help you respond rather than react in relationships",
+        "citation": "Kabat-Zinn, J. (1994). Wherever You Go, There You Are: Mindfulness Meditation"
+      }
+    },
+    "quote": "This isn't about positive thinking or manifestation. This is about understanding the neuroscience of attraction and using proven psychological principles to create real, lasting change.",
+    "disclaimer": "Based on established psychological research and proven therapeutic methods."
+  },
+  "originStory": {
+    "headline": "How I Discovered This Method",
+    "story": {
+      "part1": "At 26, I reconnected with my high school love – and realized how wrong my wiring had been.",
+      "part2": "For years, I had been unconsciously attracted to partners who triggered my trauma responses. I mistook anxiety for excitement, chaos for chemistry. When healthy love showed up, I didn't even recognize it.",
+      "quote": "That moment of reconnection proved this method works. I had rewired my nervous system to finally feel safe with real love. Now I want to show you how to do the same.",
+      "part3": "The Unbound method isn't theory – it's the exact process I used to break free from decades of painful patterns and create the secure, loving relationship I have today. If it worked for me, it can work for you too."
+    }
+  },
+  "productBreakdown": {
+    "headline": "The 6-Phase Unbound System",
+    "subtitle": "A step-by-step journey from trauma-bonding to secure attachment, designed to create lasting transformation.",
+    "phases": {
+      "phase1": {
+        "title": "Phase 1: Roadmap & Triggers",
+        "description": "Identify your unique trauma-bonding patterns and create your personalized healing roadmap"
+      },
+      "phase2": {
+        "title": "Phase 2: Pattern Identification",
+        "description": "Recognize the unconscious patterns that drive your attraction to unavailable partners"
+      },
+      "phase3": {
+        "title": "Phase 3: Trigger Mastery",
+        "description": "Learn to catch and interrupt your triggers before they hijack your relationship decisions"
+      },
+      "phase4": {
+        "title": "Phase 4: Mindful Dating",
+        "description": "Date with intention and awareness, making choices from your healed self rather than your wounds"
+      },
+      "phase5": {
+        "title": "Phase 5: Belief Transformation",
+        "description": "Rewire limiting beliefs about love, worthiness, and what you deserve in relationships"
+      },
+      "phase6": {
+        "title": "Phase 6: Real-World Integration",
+        "description": "Apply everything you've learned to create lasting change in your daily life and relationships"
+      }
+    },
+    "bonusesTitle": "Plus These Powerful Tools & Resources:",
+    "bonuses": [
+      "Comprehensive Workbook with exercises and reflection prompts",
+      "Quick Reference Cheat Sheets for dating situations",
+      "Emotional Check-In Deck™ (52 cards for daily awareness)",
+      "Trigger Response Scripts for difficult conversations",
+      "Boundary Setting Templates and examples"
+    ]
+  },
+  "pricing": {
+    "headline": "Transform Your Love Life Today",
+    "subtitle": "Everything you need to break free from painful patterns and attract healthy, lasting love.",
+    "originalPrice": "",
+    "earlyAccessPrice": "$179",
+    "standardPrice": "$279",
+    "earlyAccessMonthly": "$77",
+    "standardMonthly": "$93",
+    "productName": "Complete Unbound System",
+    "paymentPlan": "Or 3 payments of",
+    "bonusTitle": "Limited Time Bonus",
+    "bonusText": "First 300 buyers receive: Emotional Check-In Deck™ (Value: $47) - FREE",
+    "ready": "Ready to transform your love life?",
+    "scrollDown": "Scroll down to get started with your healing journey.",
+    "features": {
+      "instantAccess": {
+        "title": "Instant Access",
+        "description": "Start your transformation immediately after purchase"
+      },
+      "selfPaced": {
+        "title": "Self-Paced",
+        "description": "Work through the program at your own speed"
+      },
+      "lifetimeAccess": {
+        "title": "Lifetime Access",
+        "description": "Return to the materials whenever you need them"
+      }
+    }
+  },
+  "guarantee": {
+    "headline": "14-Day Peace-of-Mind Guarantee",
+    "subtitle": "Try Phase 1 Completely Risk-Free",
+    "description": "Try Phase 1 risk-free for 14 days… email support@herlifeunbound.com within 14 days of release for a full refund if you completed Phase 1 activities and saw no benefit.",
+    "noQuestions": "No questions asked. No hoops to jump through. Just a simple email and your money back.",
+    "quote": "I believe so deeply in this work because I've seen it transform not just my own life, but the lives of hundreds of women. You deserve to feel safe in love – and I'm willing to guarantee it."
+  },
+  "futureVision": {
+    "headline": "Imagine Your Life 6 Months From Now...",
+    "stuckTitle": "If You Stay Stuck...",
+    "stuckItems": [
+      "Another year of the same painful relationship patterns",
+      "Continuing to attract emotionally unavailable partners",
+      "Feeling exhausted by the constant cycle of hope and disappointment",
+      "Watching friends find healthy love while you stay stuck",
+      "Growing more cynical about love and relationships"
+    ],
+    "healedTitle": "When You Choose Healing...",
+    "healedItems": [
+      "Waking up feeling calm and secure in your relationships",
+      "Attracting partners who are emotionally available and consistent",
+      "Feeling confident in your worth and what you deserve",
+      "Enjoying peaceful mornings without anxiety about your relationship",
+      "Finally experiencing the safe, secure love you've always wanted"
+    ],
+    "costTitle": "The Cost of Staying Stuck",
+    "costDescription": "How much have you already spent on therapy, dating apps, self-help books, and courses that didn't address the root cause? How much more will you spend if nothing changes?",
+    "costQuestion": "More importantly: What's the cost to your heart, your hope, and your happiness?",
+    "futureMessage": "Your future self is waiting. Don't let another year pass in the same painful patterns."
+  },
+  "faq": {
+    "headline": "Frequently Asked Questions",
+    "subtitle": "I want you to feel completely confident in your decision. Here are answers to the most common questions.",
+    "questions": {
+      "trauma": {
+        "question": "Will this reopen trauma or make me feel worse?",
+        "answer": "The Unbound method is designed to be trauma-informed and gentle. We focus on building awareness and new patterns rather than diving deep into past trauma. You'll work at your own pace and can pause whenever you need to. If you have severe trauma, I recommend working with a therapist alongside this program."
+      },
+      "relationship": {
+        "question": "Does this work if I'm already in a relationship?",
+        "answer": "Unbound is designed to help you improve your current relationship by breaking patterns of anxiety, overthinking, and insecurity. The tools help you show up more securely and communicate more effectively."
+      },
+      "therapy": {
+        "question": "Is this just talk therapy or positive thinking?",
+        "answer": "Not at all. This is a practical, action-based system that combines neuroscience, attachment theory, and cognitive behavioral techniques. You'll get specific tools, exercises, and strategies that create real change in how your nervous system responds to relationships."
+      },
+      "results": {
+        "question": "How soon will I see results?",
+        "answer": "Most women notice shifts in awareness within the first week and begin changing their responses within 2-3 weeks. Deeper pattern changes typically happen over 2-3 months of consistent practice. Remember, you're rewiring decades of conditioning – be patient and compassionate with yourself."
+      },
+      "single": {
+        "question": "Do I have to be dating to benefit from this?",
+        "answer": "No! This program is just as valuable if you're single and taking a break from dating. You can work on your patterns, build secure attachment with yourself, and prepare for healthier relationships when you're ready. Many women find this the perfect time to do the deep work."
+      },
+      "tried": {
+        "question": "What if I've tried everything and nothing has worked?",
+        "answer": "I understand that frustration – I felt the same way. The difference with Unbound is that we address the nervous system patterns that drive your attraction, not just surface behaviors. If you've done therapy but still find yourself attracted to the same types of people, this program fills that gap."
+      }
+    },
+    "stillQuestions": "Still have questions? I'm here to help.",
+    "contact": "Email me at support@unboundmethod.com and I'll personally respond within 24 hours."
+  },
+  "finalCTA": {
+    "headline": "Your Heart Knows You're Ready",
+    "subtitle": "You wouldn't have read this far if you weren't ready for change. Trust that inner knowing and take the first step toward the love you deserve.",
+    "trustIndicators": {
+      "startToday": {
+        "title": "Start Today",
+        "description": "Instant access means you can begin your transformation right now"
+      },
+      "riskFree": {
+        "title": "Risk-Free",
+        "description": "14-day guarantee means there's no risk, only possibility"
+      },
+      "lifeChanging": {
+        "title": "Life-Changing",
+        "description": "This could be the moment everything shifts for you"
+      }
+    },
+    "productTitle": "Complete Unbound System",
+    "paymentPlan": "Or 3 payments of $77",
+    "bonusTitle": "Limited Time Bonus",
+    "bonusDescription": "First 300 buyers receive: Emotional Check-In Deck™ (Value: $47) - FREE",
+    "primaryCTA": "Get Unbound for $197 (Save $800)",
+    "primaryCTA": "Get Unbound for $179 (launch special pricing - first 300 spots only)",
+    "secondaryCTA": "Start with Payment Plan ($77/month)",
+    "quote": "The best time to plant a tree was 20 years ago. The second best time is now.",
+    "finalMessage": "Don't let another year pass in the same painful patterns. Your future self is counting on the decision you make today.",
+    "copyright": "© 2025 Unbound. All rights reserved."
+  },
+  "stickyButton": "Start Your Healing Journey",
+  "chat": {
+    "ticketCreated": "Support ticket created! We'll respond within 24 hours.",
+    "error": "Error sending message. Please email support@herlifeunbound.com directly."
+  },
+  "seo": {
+    "title": "Her Life Unbound - Early Access | Transform Your Love Life - Phase 1 Launches Aug 15",
+    "description": "Early Access to the trauma-informed dating transformation method. Phase 1 launches August 15, 2025. Rewire your patterns, break trauma bonds, attract healthy love. Limited founder spots available."
+  }
+}
