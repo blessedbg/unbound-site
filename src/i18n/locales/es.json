@@ -1,0 +1,370 @@
+{
+  "header": {
+    "howItWorks": "¿Cómo Funciona?",
+    "pricing": "Precios",
+    "faq": "Preguntas Más Frecuentes",
+    "getStarted": "Comenzar",
+    "language": "Idioma"
+  },
+  "earlyAccess": {
+    "banner": "Acceso Anticipado Limitado · La Fase 1 se desbloquea el 15 de agosto de 2025",
+    "badge": "Fase 1 · Llega el 15 de agosto",
+    "notice": {
+      "headline": "Tienes Acceso Anticipado",
+      "description": "Lanzamiento de la Fase 1 — llegando el 15 de agosto de 2025 — además de precios bloqueados y bonos por tiempo limitado que no estarán disponibles después.",
+      "benefits": [
+        "Acceso a la Fase 1 desde el lanzamiento",
+        "Todas las fases futuras mensualmente",
+        "Membresía de por vida"
+      ]
+    },
+    "spotsLeft": "Solo quedan {count} de 300 lugares de fundadora"
+  },
+  "hero": {
+    "headline": {
+      "main": "Sigues eligiendo el dolor que conoces. Cambiemos eso.",
+      "micro": "Rompe el vínculo traumático. Reprograma tus patrones. Construye confianza en ti misma—en tu cuerpo y en un amor seguro."
+    },
+    "subtitle": {
+      "part1": "Rompe",
+      "part2": " el vínculo traumático. ",
+      "rewires": "Reprograma",
+      "part3": " tus patrones. ",
+      "selfTrust": "confianza en ti misma",
+      "part4": " en tu cuerpo — y en el ",
+      "safeLove": "amor seguro",
+      "part5": "."
+    },
+    "videoTitle": "Vídeo de Ventas del Método Unbound",
+    "captionsAvailable": "Subtítulos disponibles - Haz clic en el botón CC del reproductor de vídeo",
+    "english": "English",
+    "spanish": "Español",
+    "trustIndicators": {
+      "guarantee": "Garantía de 14 Días",
+      "instantAccess": "Acceso Inmediato",
+      "scienceBased": "Con Base Científica"
+    }
+  },
+  "problem": {
+    "headline": {
+      "part1": "Tu ",
+      "heart": "Corazón",
+      "part2": " Te Sigue Llevando Hacia las ",
+      "wrongPeople": "Personas Equivocadas"
+    },
+    "subtitle": {
+      "part1": "No es tu culpa. Tu sistema nervioso es como un GPS averiado: ha sido programado por experiencias pasadas para confundir ",
+      "intensity": "intensidad",
+      "part2": " con intimidad, ",
+      "chaos": "caos",
+      "part3": " con química."
+    },
+    "cards": {
+      "overactiveAlarm": {
+        "title": "Sistema de Alarma Hiperactivo",
+        "description": "Tu sistema nervioso trata el amor saludable y disponible como \"aburrido\", mientras se activa con parejas no disponibles que desencadenan patrones familiares de activación."
+      },
+      "traumaBond": {
+        "title": "Imán de Vínculos Traumáticos",
+        "description": "Inconscientemente buscas parejas que recrean dinámicas familiares, confundiendo la respuesta de estrés con \"química\" y conexión genuina."
+      },
+      "safetyForeign": {
+        "title": "La Seguridad Se Siente Extraña",
+        "description": "Cuando alguien te trata bien de manera consistente, tu sistema no lo reconoce como amor: se siente desconocido, incluso incómodo o \"demasiado fácil\"."
+      }
+    },
+    "quote": "No estás rota. No estás eligiendo mal. Tu sistema nervioso simplemente está siguiendo una programación desactualizada que una vez te mantuvo segura, pero ahora te mantiene atascada."
+  },
+  "opportunity": {
+    "headline": "¿Qué Pasaría Si Pudieras Reprogramar Tus Patrones de Atracción?",
+    "subtitle": "La neurociencia nos muestra que el cerebro es notablemente plástico. Con el enfoque correcto, puedes literalmente reprogramar tu sistema nervioso para sentirte segura con el amor saludable.",
+    "method": {
+      "title": "El Método de Reprogramación del Apego™",
+      "description": "Un sistema con respaldo científico que combina teoría del apego, técnicas cognitivo-conductuales y prácticas de mindfulness para ayudarte a reconocer, interrumpir y reprogramar los patrones que te mantienen atascada.",
+      "socialProof": ""
+    },
+    "steps": {
+      "identify": {
+        "title": "Identificar Patrones",
+        "description": "Reconoce tus desencadenantes únicos de vínculos traumáticos y heridas de apego"
+      },
+      "rewire": {
+        "title": "Reprogramar Respuestas",
+        "description": "Crea nuevas vías neurales que reconocen el amor saludable como seguro"
+      },
+      "attract": {
+        "title": "Atraer Diferente",
+        "description": "Gravita naturalmente hacia parejas emocionalmente disponibles y seguras"
+      }
+    }
+  },
+  "whoThisIsFor": {
+    "headline": "Esto Es Para Ti Si Eres...",
+    "subtitle": "Mujeres emocionalmente inteligentes que están cansadas de los mismos patrones dolorosos y listas para crear un cambio duradero.",
+    "profiles": {
+      "serialDater": {
+        "title": "Citas en Serie",
+        "description": "Has tenido innumerables citas, pero sigues atrayendo al mismo tipo de persona emocionalmente no disponible, preguntándote por qué tu \"selector\" parece estar roto"
+      },
+      "patternRepeater": {
+        "title": "Repetidora de Patrones",
+        "description": "Reconoces el ciclo, pero no puedes romperlo: cada relación se siente como déjà vu con caras diferentes, pero las mismas dinámicas"
+      },
+      "healthySabotager": {
+        "title": "Saboteadora de lo Saludable",
+        "description": "Cuando alguien te trata bien de manera consistente, te sientes incómoda y encuentras formas de alejarlo o crear drama"
+      },
+      "overthinker": {
+        "title": "Sobreanalizadora",
+        "description": "Analizas cada mensaje, cada interacción, buscando constantemente tranquilidad y validación, mientras tu mente se espirala con escenarios del peor caso"
+      },
+      "traumaBondSurvivor": {
+        "title": "Sobreviviente de Vínculos Traumáticos",
+        "description": "Has hecho años de terapia, pero aún te encuentras magnéticamente atraída hacia parejas que recrean patrones familiares de dolor"
+      },
+      "fixer": {
+        "title": "La Reparadora",
+        "description": "Te atrae el \"potencial\" y crees que puedes sanar o cambiar a tus parejas a través de suficiente amor y comprensión"
+      }
+    },
+    "quote": "Si estás leyendo esto y pensando \"esta soy yo\", ya eres más consciente que la mayoría. Esa conciencia es tu superpoder: ahora vamos a canalizarla hacia un cambio duradero."
+  },
+  "valueProposition": {
+    "headline": {
+      "part1": "Transforma Tu ",
+      "loveLife": "Vida Amorosa",
+      "part2": " Desde ",
+      "insideOut": "Adentro Hacia Afuera"
+    },
+    "subtitle": {
+      "part1": "Deja de conformarte con migajas de afecto. Mereces un ",
+      "part2": "amor que se sienta seguro, estable y profundamente satisfactorio",
+      "part3": "."
+    },
+    "benefits": {
+      "breakFree": {
+        "title": "LIBÉRATE",
+        "subtitle": "de ciclos tóxicos",
+        "description": "Finalmente escapa del patrón agotador de atraer parejas emocionalmente no disponibles"
+      },
+      "rewire": {
+        "title": "RECONECTA",
+        "subtitle": "patrones de atracción",
+        "description": "Literalmente cambia la respuesta de tu cerebro a dinámicas de relación saludables vs. no saludables"
+      },
+      "master": {
+        "title": "DOMINA",
+        "subtitle": "desencadenantes y límites",
+        "description": "Reconoce tus desencadenantes antes de que secuestren tus decisiones y establece límites que se mantengan"
+      },
+      "build": {
+        "title": "CONSTRUYE",
+        "subtitle": "confianza segura y calmada",
+        "description": "Desarrolla una autoestima inquebrantable que no dependa de la validación externa"
+      }
+    }
+  },
+  "scientificProof": {
+    "headline": "Basado en Ciencia Real, No Promesas Vacías",
+    "subtitle": "El método Unbound combina décadas de investigación psicológica con estrategias prácticas y accionables que crean un cambio duradero.",
+    "sciences": {
+      "attachmentTheory": {
+        "title": "Teoría del Apego",
+        "description": "Entender cómo las relaciones tempranas moldean tus patrones de apego adulto y elecciones románticas",
+        "citation": "Bowlby, J. (1988). Una Base Segura: Apego Padre-Hijo y Desarrollo Humano Saludable"
+      },
+      "cbt": {
+        "title": "Terapia Cognitivo Conductual",
+        "description": "Técnicas basadas en evidencia para identificar y cambiar patrones de pensamiento que impulsan elecciones de relación no saludables",
+        "citation": "Beck, A. T. (1976). Terapia Cognitiva y los Trastornos Emocionales"
+      },
+      "emotionalIntelligence": {
+        "title": "Inteligencia Emocional",
+        "description": "Desarrollar la habilidad de reconocer, entender y manejar tus emociones en las relaciones",
+        "citation": "Goleman, D. (1995). Inteligencia Emocional: Por Qué Importa Más Que el IQ"
+      },
+      "mindfulness": {
+        "title": "Prácticas de Mindfulness",
+        "description": "Técnicas de conciencia del momento presente que te ayudan a responder en lugar de reaccionar en las relaciones",
+        "citation": "Kabat-Zinn, J. (1994). Donde Quiera Que Vayas, Ahí Estás: Meditación Mindfulness"
+      }
+    },
+    "quote": "Esto no se trata de pensamiento positivo o manifestación. Se trata de entender la neurociencia de la atracción y usar principios psicológicos probados para crear un cambio real y duradero.",
+    "disclaimer": "Basado en investigación psicológica establecida y métodos terapéuticos probados."
+  },
+  "originStory": {
+    "headline": "Cómo Descubrí Este Método",
+    "story": {
+      "part1": "A los 26, me reconecté con mi amor de la preparatoria – y me di cuenta de lo equivocada que había estado mi programación.",
+      "part2": "Durante años, había sido inconscientemente atraída a parejas que desencadenaban mis respuestas de trauma. Confundía ansiedad con emoción, caos con química. Cuando el amor saludable apareció, ni siquiera lo reconocí.",
+      "quote": "Ese momento de reconexión probó que este método funciona. Había reconectado mi sistema nervioso para finalmente sentirme segura con el amor real. Ahora quiero mostrarte cómo hacer lo mismo.",
+      "part3": "El método Unbound no es teoría – es el proceso exacto que usé para liberarme de décadas de patrones dolorosos y crear la relación segura y amorosa que tengo hoy. Si funcionó para mí, puede funcionar para ti también."
+    }
+  },
+  "productBreakdown": {
+    "headline": "El Sistema Unbound de 6 Fases",
+    "subtitle": "Un viaje paso a paso desde vínculos traumáticos hasta apego seguro, diseñado para crear una transformación duradera.",
+    "phases": {
+      "phase1": {
+        "title": "Fase 1: Mapa de Ruta y Desencadenantes",
+        "description": "Identifica tus patrones únicos de vínculos traumáticos y crea tu mapa de sanación personalizado"
+      },
+      "phase2": {
+        "title": "Fase 2: Identificación de Patrones",
+        "description": "Reconoce los patrones inconscientes que impulsan tu atracción hacia parejas no disponibles"
+      },
+      "phase3": {
+        "title": "Fase 3: Dominio de Desencadenantes",
+        "description": "Aprende a captar e interrumpir tus desencadenantes antes de que secuestren tus decisiones de relación"
+      },
+      "phase4": {
+        "title": "Fase 4: Citas Conscientes",
+        "description": "Ten citas con intención y conciencia, tomando decisiones desde tu yo sanado en lugar de tus heridas"
+      },
+      "phase5": {
+        "title": "Fase 5: Transformación de Creencias",
+        "description": "Reconecta creencias limitantes sobre el amor, la dignidad y lo que mereces en las relaciones"
+      },
+      "phase6": {
+        "title": "Fase 6: Integración en el Mundo Real",
+        "description": "Aplica todo lo que has aprendido para crear un cambio duradero en tu vida diaria y relaciones"
+      }
+    },
+    "bonusesTitle": "Además de Estas Poderosas Herramientas y Recursos:",
+    "bonuses": [
+      "Libro de trabajo integral con ejercicios y preguntas de reflexión",
+      "Hojas de referencia rápida para situaciones de citas",
+      "Baraja de Chequeo Emocional™ (52 cartas para conciencia diaria)",
+      "Scripts de respuesta a desencadenantes para conversaciones difíciles",
+      "Plantillas y ejemplos para establecer límites"
+    ]
+  },
+  "pricing": {
+    "headline": "Transforma Tu Vida Amorosa Hoy",
+    "subtitle": "Todo lo que necesitas para liberarte de patrones dolorosos y atraer amor saludable y duradero.",
+    "originalPrice": "",
+    "earlyAccessPrice": "$179",
+    "standardPrice": "$279",
+    "earlyAccessMonthly": "$77",
+    "standardMonthly": "$93",
+    "productName": "Sistema Unbound Completo",
+    "paymentPlan": "O 3 pagos de",
+    "bonusTitle": "Bono por Tiempo Limitado",
+    "bonusText": "Los primeros 300 compradores reciben: Baraja de Chequeo Emocional™ (Valor: $47) - GRATIS",
+    "ready": "¿Lista para transformar tu vida amorosa?",
+    "scrollDown": "Desplázate hacia abajo para comenzar tu viaje de sanación.",
+    "features": {
+      "instantAccess": {
+        "title": "Acceso Inmediato",
+        "description": "Comienza tu transformación inmediatamente después de la compra"
+      },
+      "selfPaced": {
+        "title": "A Tu Ritmo",
+        "description": "Trabaja a través del programa a tu propia velocidad"
+      },
+      "lifetimeAccess": {
+        "title": "Acceso de Por Vida",
+        "description": "Regresa a los materiales cuando los necesites"
+      }
+    }
+  },
+  "guarantee": {
+    "headline": "Garantía de Tranquilidad de 14 Días",
+    "subtitle": "Prueba la Fase 1 Completamente Sin Riesgo",
+    "description": "Prueba la Fase 1 sin riesgo durante 14 días… envía un correo a support@herlifeunbound.com dentro de los 14 días posteriores al lanzamiento para obtener un reembolso completo si completaste las actividades de la Fase 1 y no viste beneficios.",
+    "noQuestions": "Sin preguntas. Sin obstáculos que saltar. Solo un email simple y tu dinero de vuelta.",
+    "quote": "Creo tan profundamente en este trabajo porque he visto transformar no solo mi propia vida, sino las vidas de cientos de mujeres. Mereces sentirte segura en el amor – y estoy dispuesta a garantizarlo."
+  },
+  "futureVision": {
+    "headline": "Imagina Tu Vida en 6 Meses...",
+    "stuckTitle": "Si Te Quedas Atascada...",
+    "stuckItems": [
+      "Otro año de los mismos patrones de relación dolorosos",
+      "Continuar atrayendo parejas emocionalmente no disponibles",
+      "Sentirte agotada por el ciclo constante de esperanza y decepción",
+      "Ver a amigas encontrar amor saludable mientras tú te quedas atascada",
+      "Volverse más cínica sobre el amor y las relaciones"
+    ],
+    "healedTitle": "Cuando Eliges Sanar...",
+    "healedItems": [
+      "Despertar sintiéndote calmada y segura en tus relaciones",
+      "Atraer parejas que son emocionalmente disponibles y consistentes",
+      "Sentirte confiada en tu valor y lo que mereces",
+      "Disfrutar mañanas pacíficas sin ansiedad sobre tu relación",
+      "Finalmente experimentar el amor seguro y estable que siempre has querido"
+    ],
+    "costTitle": "El Costo de Quedarse Atascada",
+    "costDescription": "¿Cuánto has gastado ya en terapia, apps de citas, libros de autoayuda y cursos que no abordaron la causa raíz? ¿Cuánto más gastarás si nada cambia?",
+    "costQuestion": "Más importante: ¿Cuál es el costo para tu corazón, tu esperanza y tu felicidad?",
+    "futureMessage": "Tu yo futuro está esperando. No dejes que pase otro año en los mismos patrones dolorosos."
+  },
+  "faq": {
+    "headline": "Preguntas Frecuentes",
+    "subtitle": "Quiero que te sientas completamente confiada en tu decisión. Aquí están las respuestas a las preguntas más comunes.",
+    "questions": {
+      "trauma": {
+        "question": "¿Esto reabrirá trauma o me hará sentir peor?",
+        "answer": "El método Unbound está diseñado para ser informado por trauma y gentil. Nos enfocamos en construir conciencia y nuevos patrones en lugar de profundizar en trauma pasado. Trabajarás a tu propio ritmo y puedes pausar cuando necesites. Si tienes trauma severo, recomiendo trabajar con un terapeuta junto con este programa."
+      },
+      "relationship": {
+        "question": "¿Esto funciona si ya estoy en una relación?",
+        "answer": "Unbound está diseñado para ayudarte a mejorar tu relación actual rompiendo patrones de ansiedad, sobre-pensamiento e inseguridad. Las herramientas te ayudan a presentarte más segura y comunicarte más efectivamente."
+      },
+      "therapy": {
+        "question": "¿Esto es solo terapia de conversación o pensamiento positivo?",
+        "answer": "Para nada. Este es un sistema práctico basado en acción que combina neurociencia, teoría del apego y técnicas cognitivo-conductuales. Obtendrás herramientas específicas, ejercicios y estrategias que crean un cambio real en cómo tu sistema nervioso responde a las relaciones."
+      },
+      "results": {
+        "question": "¿Qué tan pronto veré resultados?",
+        "answer": "La mayoría de las mujeres notan cambios en conciencia dentro de la primera semana y comienzan a cambiar sus respuestas dentro de 2-3 semanas. Los cambios de patrones más profundos típicamente ocurren durante 2-3 meses de práctica consistente. Recuerda, estás reconectando décadas de condicionamiento – sé paciente y compasiva contigo misma."
+      },
+      "single": {
+        "question": "¿Tengo que estar teniendo citas para beneficiarme de esto?",
+        "answer": "¡No! Este programa es igual de valioso si estás soltera y tomando un descanso de las citas. Puedes trabajar en tus patrones, construir apego seguro contigo misma y prepararte para relaciones más saludables cuando estés lista. Muchas mujeres encuentran que este es el momento perfecto para hacer el trabajo profundo."
+      },
+      "tried": {
+        "question": "¿Qué pasa si he probado todo y nada ha funcionado?",
+        "answer": "Entiendo esa frustración – sentí lo mismo. La diferencia con Unbound es que abordamos los patrones del sistema nervioso que impulsan tu atracción, no solo comportamientos superficiales. Si has hecho terapia pero aún te encuentras atraída a los mismos tipos de personas, este programa llena ese vacío."
+      }
+    },
+    "stillQuestions": "¿Aún tienes preguntas? Estoy aquí para ayudar.",
+    "contact": "Envíame un email a support@unboundmethod.com y responderé personalmente dentro de 24 horas."
+  },
+  "finalCTA": {
+    "headline": "Tu Corazón Sabe Que Estás Lista",
+    "subtitle": "No habrías leído hasta aquí si no estuvieras lista para el cambio. Confía en ese saber interno y da el primer paso hacia el amor que mereces.",
+    "trustIndicators": {
+      "startToday": {
+        "title": "Comienza Hoy",
+        "description": "El acceso inmediato significa que puedes comenzar tu transformación ahora mismo"
+      },
+      "riskFree": {
+        "title": "Sin Riesgo",
+        "description": "La garantía de 14 días significa que no hay riesgo, solo posibilidad"
+      },
+      "lifeChanging": {
+        "title": "Que Cambia la Vida",
+        "description": "Este podría ser el momento en que todo cambie para ti"
+      }
+    },
+    "productTitle": "Sistema Unbound Completo",
+    "paymentPlan": "O 3 pagos de $77",
+    "bonusTitle": "Bono por Tiempo Limitado",
+    "bonusDescription": "Los primeros 300 compradores reciben: Baraja de Chequeo Emocional™ (Valor: $47) - GRATIS",
+    "primaryCTA": "Obtener Unbound por $197 (Ahorra $800)",
+    "primaryCTA": "Obtener Unbound por $179 (precios especiales de lanzamiento - solo primeros 300 lugares)",
+    "secondaryCTA": "Comenzar con Plan de Pagos ($77/mes)",
+    "quote": "El mejor momento para plantar un árbol fue hace 20 años. El segundo mejor momento es ahora.",
+    "finalMessage": "No dejes que pase otro año en los mismos patrones dolorosos. Tu yo futuro cuenta con la decisión que tomes hoy.",
+    "copyright": "© 2025 Unbound. Todos los derechos reservados."
+  },
+  "stickyButton": "Comienza Tu Viaje de Sanación",
+  "chat": {
+    "ticketCreated": "¡Ticket de soporte creado! Responderemos dentro de 24 horas.",
+    "error": "Error enviando mensaje. Por favor envía un email directamente a support@herlifeunbound.com."
+  },
+  "seo": {
+    "title": "Her Life Unbound - Acceso Anticipado | Transforma Tu Vida Amorosa - Fase 1 Lanza el 15 de Agosto",
+    "description": "Acceso Anticipado al método de transformación de citas informado por trauma. Fase 1 lanza el 15 de agosto 2025. Reprograma tus patrones, rompe vínculos traumáticos, atrae amor saludable. Lugares limitados de fundador disponibles."
+  }
+}
