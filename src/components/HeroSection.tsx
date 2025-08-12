@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
                 🎬 Video includes closed captions and audio description
               </p>
               <p className="text-slate-500 text-xs">
-                Full transcript available upon request - contact support@unboundmethod.com
+                Full transcript available upon request - contact support@herlifeunbound.com
               </p>
             </div>
           </div>
