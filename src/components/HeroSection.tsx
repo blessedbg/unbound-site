@@ -62,15 +62,16 @@ const HeroSection: React.FC = () => {
               <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
                 {/* Aspect Ratio Container */}
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe 
-                    src="https://www.youtube.com/embed/AHiT-tIk1uM?autoplay=1&cc_load_policy=1&controls=0&iv_load_policy=3&loop=1&playlist=AHiT-tIk1uM&modestbranding=1&rel=0&showinfo=0"
-    className="absolute top-0 left-0 w-full h-full"
-    frameBorder="0"
-    allow="autoplay; encrypted-media"
-    allowFullScreen
-    title="Unbound Method - Transform Your Love Life - Video includes captions for accessibility"
-    aria-describedby="video-description"
-                  ></iframe>
+                 <iframe
+  width="1296"
+  height="729"
+  style="max-width:100%; height:auto; aspect-ratio:16/9; border:0;"
+  src="https://www.youtube-nocookie.com/embed/AHiT-tIk1uM?autoplay=1&mute=1&loop=1&playlist=AHiT-tIk1uM&playsinline=1&controls=0&modestbranding=1&rel=0&cc_load_policy=1&cc_lang_pref=en&hl=en"
+  title="Unbound VSL (EN)"
+  frameborder="0"
+  allow="autoplay; encrypted-media; picture-in-picture"
+  allowfullscreen
+></iframe>
                 </div>
               </div>
             </div>
