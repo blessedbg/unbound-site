@@ -63,15 +63,13 @@ const HeroSection: React.FC = () => {
                 {/* Aspect Ratio Container */}
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe 
-                    type="text/html" 
-                    frameBorder="0" 
-                    width="1920" 
-                    height="1080" 
-                    src="https://www.youtube.com/embed/PwdI6QF2uGU?autoplay=1&cc_load_policy=1&loop=1&playlist=PwdI6QF2uGU&modestbranding=1" 
-                    allowFullScreen
-                    className="absolute top-0 left-0 w-full h-full"
-                    title="Unbound Method - Transform Your Love Life - Video includes captions for accessibility"
-                    aria-describedby="video-description"
+                    src="https://www.youtube.com/embed/AHiT-tIk1uM?autoplay=1&cc_load_policy=1&controls=0&iv_load_policy=3&loop=1&playlist=AHiT-tIk1uM&modestbranding=1&rel=0&showinfo=0"
+    className="absolute top-0 left-0 w-full h-full"
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+    title="Unbound Method - Transform Your Love Life - Video includes captions for accessibility"
+    aria-describedby="video-description"
                   ></iframe>
                 </div>
               </div>
