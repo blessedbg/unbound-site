@@ -7,7 +7,7 @@ import EarlyAccessBadge from './EarlyAccessBadge';
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
-  // --- YouTube (minimal chrome, EN UI/captions) ---
+  // YouTube (minimal chrome, EN captions/UI)
   const videoId = 'AHiT-tIk1uM';
   const videoSrc =
     `https://www.youtube-nocookie.com/embed/${videoId}` +
@@ -18,7 +18,6 @@ const HeroSection: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [needsSound, setNeedsSound] = useState(true);
 
-  // Best-effort unmute after a tiny delay (still requires user gesture on many browsers)
   useEffect(() => {
     const win = iframeRef.current?.contentWindow;
     if (!win) return;
@@ -39,22 +38,22 @@ const HeroSection: React.FC = () => {
     setNeedsSound(false);
   };
 
-  // Remove the dash in “in your body — and in”
+  // Remove dash in “in your body — and in”
   const part4Clean = t('hero.subtitle.part4').replace(/\s*[—–-]\s*/g, ' ');
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-pink-50 via-white to-rose-50">
-      {/* Subtle background shapes (kept tidy) */}
+      {/* Subtle background dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/6 w-56 h-56 bg-pink-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float"></div>
         <div className="absolute top-2/3 right-1/4 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float delay-1000"></div>
         <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply blur-xl opacity-20 animate-float delay-2000"></div>
       </div>
 
-      {/* Tight top padding so content sits higher; min height < 100vh so video peeks above the fold */}
-      <div className="relative max-w-7xl mx-auto px-4 pt-6 md:pt-8 pb-10 min-h-[85vh] flex items-center">
-        {/* Desktop: two columns so video is visible without scrolling; Mobile: stacked */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
+      {/* SAFE TOP PADDING so header doesn’t overlap */}
+      <div className="relative max-w-7xl mx-auto px-4 pt-24 md:pt-28 pb-12 md:pb-16">
+        {/* 2 cols on desktop so video is visible above the fold; stacked on mobile */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* LEFT: Badge + Headline + Subhead + CTA */}
           <div className="text-center md:text-left">
             <div className="flex justify-center md:justify-start mb-5">
@@ -77,7 +76,7 @@ const HeroSection: React.FC = () => {
               )}
             </h1>
 
-            {/* Subhead: gradient ONLY on Break / Rewire / Build */}
+            {/* Subhead — gradient ONLY on Break / Rewire / Build */}
             <div className="mt-4 md:mt-5 text-base md:text-xl lg:text-2xl font-medium leading-relaxed text-gray-700 max-w-2xl md:max-w-none mx-auto md:mx-0">
               <p>
                 <span className="font-bold text-gradient">{t('hero.subtitle.part1')}</span>
@@ -104,7 +103,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT: Video (shows above the fold on desktop) */}
+          {/* RIGHT: Video (above-the-fold on desktop) */}
           <div className="max-w-2xl md:max-w-none mx-auto w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
               <div className="aspect-video">
@@ -149,7 +148,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Trust chips (compact) */}
+        {/* Trust chips */}
         <div className="mt-8 md:mt-10 text-center">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg border border-gray-100">
