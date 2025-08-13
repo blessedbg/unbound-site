@@ -222,9 +222,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Spacer to prevent content from hiding behind fixed header */}
-      <div className="h-16 lg:h-20" />
     </>
   );
 };
