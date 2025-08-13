@@ -7,6 +7,7 @@ import EarlyAccessBadge from './EarlyAccessBadge';
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
+
   const scrollToNext = () => {
     const nextSection = document.querySelector('#problem');
     if (nextSection) {
@@ -66,7 +67,7 @@ const HeroSection: React.FC = () => {
                     frameBorder="0" 
                     width="1920" 
                     height="1080" 
-                    src="https://www.youtube-nocookie.com/embed/AHiT-tIk1uM?autoplay=1&mute=1&playsinline=1&loop=1&playlist=AHiT-tIk1uM&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=1" 
+                    src="https://www.youtube-nocookie.com/embed/AHiT-tIk1uM?autoplay=1&cc_load_policy=1&loop=1&playlist=AHiT-tIk1uM&modestbranding=1&rel=0&hl=en&cc_lang_pref=en&playsinline=1"
                     allowFullScreen
                     className="absolute top-0 left-0 w-full h-full"
                     title="Unbound Method - Transform Your Love Life - Video includes captions for accessibility"
@@ -83,7 +84,7 @@ const HeroSection: React.FC = () => {
                 🎬 Video includes closed captions and audio description
               </p>
               <p className="text-slate-500 text-xs">
-                Full transcript available upon request - contact support@unboundmethod.com
+                Full transcript available upon request - contact support@herlifeunbound.com
               </p>
             </div>
           </div>
