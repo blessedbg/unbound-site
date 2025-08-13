@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                 <img 
                   src="/Unbound Logo.png" 
                   alt="Unbound - Transform Your Love Life" 
-                  className="h-12 sm:h-12 lg:h-16 w-auto filter drop-shadow-sm hover:drop-shadow-md transition-all duration-300 hover:scale-105"
+                  className="h-10 sm:h-12 lg:h-16 w-auto filter drop-shadow-sm hover:drop-shadow-md transition-all duration-300 hover:scale-105"
                   loading="eager"
                 />
               </button>
