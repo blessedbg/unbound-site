@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Shield, Clock, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
@@ -7,73 +7,63 @@ import EarlyAccessBadge from './EarlyAccessBadge';
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
-  // --- Language for captions/UI (main=en, /es=es) ---
+  // Language for captions/UI
   const lang = (i18n?.language || 'en').split('-')[0];
   const hl = lang === 'es' ? 'es' : 'en';
   const cc = hl;
 
-  // --- YouTube embed config ---
+  // Build YouTube URL (autoplay allowed because we start muted, then try to unmute)
   const videoId = 'AHiT-tIk1uM';
   const params = new URLSearchParams({
-    autoplay: '1',          // start automatically
-    mute: '1',              // start muted so autoplay is allowed...
+    autoplay: '1',
+    mute: '1',
     loop: '1',
-    playlist: videoId,      // required for loop
+    playlist: videoId,
     playsinline: '1',
     controls: '1',
     modestbranding: '1',
     rel: '0',
     cc_load_policy: '1',
-    cc_lang_pref: cc,       // captions language
-    hl,                     // player UI language
-    enablejsapi: '1',       // allow postMessage API
+    cc_lang_pref: cc,
+    hl,
+    enablejsapi: '1',
   });
   const videoSrc = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
 
-  // --- Unmute logic: try to enable sound immediately; fall back to tap overlay if blocked ---
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [needsTap, setNeedsTap] = useState(false);
 
-  const post = (cmd: string, args: any[] = []) => {
+  // Best-effort unmute shortly after load (some browsers will allow; others require user gesture)
+  useEffect(() => {
     const win = iframeRef.current?.contentWindow;
     if (!win) return;
-    win.postMessage(JSON.stringify({ event: 'command', func: cmd, args }), '*');
-  };
+    const post = (cmd: string, args: any[] = []) =>
+      win.postMessage(JSON.stringify({ event: 'command', func: cmd, args }), '*');
 
-  // Try to play with sound (some browsers will allow; others will block until user gesture)
-  const tryEnableSound = () => {
-    post('unMute');
-    post('setVolume', [100]);
-    post('playVideo');
-  };
-
-  useEffect(() => {
-    // Give the player a moment to initialize, then attempt sound
     const t1 = setTimeout(() => {
-      tryEnableSound();
+      post('unMute');
+      post('setVolume', [100]);
+      post('playVideo');
     }, 600);
 
-    // If sound was blocked, reveal the overlay prompt
-    const t2 = setTimeout(() => setNeedsTap(true), 1400);
-
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
+    return () => clearTimeout(t1);
   }, []);
 
-  const handleTap = () => {
-    tryEnableSound();
-    setNeedsTap(false);
+  // Manual sound-on (one tap) for strict browsers
+  const enableSound = () => {
+    const win = iframeRef.current?.contentWindow;
+    if (!win) return;
+    win.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+    win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+    win.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
   };
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-2000"></div>
+        <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float" />
+        <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float delay-1000" />
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply blur-xl opacity-20 animate-float delay-2000" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-20 pb-16">
@@ -83,10 +73,10 @@ const HeroSection: React.FC = () => {
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline (original structure) */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto">
+          {/* Headline (robust gradient; no custom class needed) */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto tracking-tight">
             {t('hero.headline.part1')}{' '}
-            <span className="text-gradient">
+            <span className="inline-block bg-gradient-to-r from-rose-600 via-fuchsia-600 to-purple-600 bg-clip-text text-transparent">
               {t('hero.headline.part2')}
             </span>
           </h1>
@@ -130,17 +120,15 @@ const HeroSection: React.FC = () => {
                 allowFullScreen
                 loading="lazy"
               />
-              {needsTap && (
-                <button
-                  onClick={handleTap}
-                  aria-label={hl === 'es' ? 'Tocar para activar el sonido' : 'Tap to enable sound'}
-                  className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm"
-                >
-                  <span className="px-5 py-3 rounded-full bg-white text-gray-900 font-semibold shadow-lg">
-                    {hl === 'es' ? 'Toca para activar el sonido 🔊' : 'Tap to enable sound 🔊'}
-                  </span>
-                </button>
-              )}
+              {/* Small, unobtrusive Sound button for strict autoplay policies */}
+              <button
+                type="button"
+                onClick={enableSound}
+                className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/90 text-gray-900 text-sm font-semibold shadow-md hover:bg-white"
+                aria-label={hl === 'es' ? 'Activar sonido' : 'Enable sound'}
+              >
+                🔊 {hl === 'es' ? 'Sonido' : 'Sound On'}
+              </button>
             </div>
           </div>
 
@@ -151,11 +139,11 @@ const HeroSection: React.FC = () => {
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <span className="flex items-center space-x-1">
-                <span className="w-3 h-2 bg-red-500 rounded-sm"></span>
+                <span className="w-3 h-2 bg-red-500 rounded-sm" />
                 <span className="text-gray-600">{t('hero.english', 'English')}</span>
               </span>
               <span className="flex items-center space-x-1">
-                <span className="w-3 h-2 bg-yellow-500 rounded-sm"></span>
+                <span className="w-3 h-2 bg-yellow-500 rounded-sm" />
                 <span className="text-gray-600">{t('hero.spanish', 'Español')}</span>
               </span>
             </div>
