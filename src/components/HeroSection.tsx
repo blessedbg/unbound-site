@@ -1,45 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Shield, Clock, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
 import EarlyAccessBadge from './EarlyAccessBadge';
 
 const HeroSection: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();                                                     I need that with the new video ID plugged into it and nothing else modified or changed. Can you do that?
 
-  // Language for captions/UI (EN on main, ES on /es)
-  const lang = (i18n?.language || 'en').split('-')[0];
-  const hl = lang === 'es' ? 'es' : 'en';
-
-  // YouTube embed (autoplay allowed because we start muted; we then try to unmute)
-  const videoId = 'AHiT-tIk1uM';
-  const videoSrc = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=1&modestbranding=1&rel=0&cc_load_policy=1&cc_lang_pref=${hl}&hl=${hl}&enablejsapi=1`;
-
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  // Best-effort unmute after load; some browsers will still require a click
-  useEffect(() => {
-    const win = iframeRef.current?.contentWindow;
-    if (!win) return;
-    const post = (func: string, args: any[] = []) =>
-      win.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
-
-    const t1 = setTimeout(() => {
-      post('unMute');
-      post('setVolume', [100]);
-      post('playVideo');
-    }, 700);
-
-    return () => clearTimeout(t1);
-  }, []);
-
-  const enableSound = () => {
-    const win = iframeRef.current?.contentWindow;
-    if (!win) return;
-    win.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
-    win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
-    win.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
-  };
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
@@ -57,35 +24,27 @@ const HeroSection: React.FC = () => {
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline — EXACTLY your original structure */}
+          {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto">
-            {t('hero.headline.part1')}{' '}
-            <span className="text-gradient">
-              {t('hero.headline.part2')}
+            <span className="block mb-4">
+              ¡{t('hero.headline.main')}!
             </span>
           </h1>
 
           {/* Subtitle */}
-          <div
-            className="
-              text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed
-              max-w-5xl mx-auto space-y-2
-              text-gray-700
-              [&_*]:text-gray-700
-            "
-          >
+          <div className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium leading-relaxed max-w-5xl mx-auto space-y-2">
             <p>
-              <span className="font-bold">{t('hero.subtitle.part1')}</span>
-              <span>{t('hero.subtitle.part2')}</span>
-              <span className="font-bold">{t('hero.subtitle.rewires')}</span>
-              <span>{t('hero.subtitle.part3')}</span>
+              <span className="font-bold text-pink-600">{t('hero.subtitle.part1')}</span>
+              <span className="text-gray-700">{t('hero.subtitle.part2')}</span>
+              <span className="font-bold text-rose-600">{t('hero.subtitle.rewires')}</span>
+              <span className="text-gray-700">{t('hero.subtitle.part3')}</span>
             </p>
             <p>
-              <span>Construye </span>
-              <span className="font-bold">{t('hero.subtitle.selfTrust')}</span>
-              <span>{t('hero.subtitle.part4')}</span>
-              <span className="font-bold">{t('hero.subtitle.safeLove')}</span>
-              <span>{t('hero.subtitle.part5')}</span>
+              <span className="text-gray-700">Construye </span>
+              <span className="font-bold text-purple-600">{t('hero.subtitle.selfTrust')}</span>
+              <span className="text-gray-700">{t('hero.subtitle.part4')}</span>
+              <span className="font-bold text-pink-600">{t('hero.subtitle.safeLove')}</span>
+              <span className="text-gray-700">{t('hero.subtitle.part5')}</span>
             </p>
           </div>
         </div>
@@ -94,41 +53,31 @@ const HeroSection: React.FC = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="video-container relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
-              <iframe
-                ref={iframeRef}
+             <iframe
+        src="https://www.youtube.com/embed/AHiT-tIk1uM?autoplay=1&cc_load_policy=1&loop=1&playlist=AHiT-tIk1uM&modestbranding=1&rel=0&enablejsapi=1&cc_lang_pref=es&hl=es"
+        title={t('hero.videoTitle')}
+        frameBorder={0}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
                 className="w-full h-full"
-                src={videoSrc}
-                title={hl === 'es' ? 'Unbound VSL (ES)' : 'Unbound VSL (EN)'}
-                frameBorder={0}
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
                 loading="lazy"
-              />
-              {/* Tiny corner button to enable sound if the browser blocks it */}
-              <button
-                type="button"
-                onClick={enableSound}
-                className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/90 text-gray-900 text-sm font-semibold shadow-md hover:bg-white"
-                aria-label={hl === 'es' ? 'Activar sonido' : 'Enable sound'}
-              >
-                🔊 {hl === 'es' ? 'Sonido' : 'Sound On'}
-              </button>
+              ></iframe>
             </div>
           </div>
-
+          
           {/* Video Caption */}
           <div className="text-center mt-6 space-y-2">
             <p className="text-sm text-gray-600">
-              {t('hero.captionsAvailable', hl === 'es' ? 'Subtítulos disponibles' : 'Captions available')}
+              {t('hero.captionsAvailable')}
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <span className="flex items-center space-x-1">
                 <span className="w-3 h-2 bg-red-500 rounded-sm"></span>
-                <span className="text-gray-600">{t('hero.english', 'English')}</span>
+                <span className="text-gray-600">{t('hero.english')}</span>
               </span>
               <span className="flex items-center space-x-1">
                 <span className="w-3 h-2 bg-yellow-500 rounded-sm"></span>
-                <span className="text-gray-600">{t('hero.spanish', 'Español')}</span>
+                <span className="text-gray-600">{t('hero.spanish')}</span>
               </span>
             </div>
           </div>
@@ -136,11 +85,11 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Section */}
         <div className="text-center space-y-8">
-          <CTAButton
+          <CTAButton 
             text={t('stickyButton')}
             className="btn-lg px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
           />
-
+          
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
             <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
