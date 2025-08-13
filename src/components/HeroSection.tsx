@@ -67,49 +67,41 @@ const HeroSection: React.FC = () => {
         className="relative max-w-7xl mx-auto px-4 pb-10 md:pb-12"
         style={{ paddingTop: headerPad }}
       >
-        <div className="text-center space-y-6 mb-6">
+        <div className="text-center space-y-4 mb-4">
           {/* Early Access Badge */}
           <div className="flex justify-center">
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline — your exact wording */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
+          {/* Main Headline — updated wording, slightly smaller for CTA visibility */}
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
             {i18n.language === 'en' ? (
               <>
-                You keep choosing the <span className="text-accent font-semibold">pain</span> you{' '}
-                <span className="text-accent font-semibold">recognize</span>.<br />
-                Let&apos;s <span className="text-accent font-semibold">change</span> that.
+                Why You&apos;re <span className="text-gradient whitespace-nowrap">Magnetically Drawn</span> to Men Who Will <span className="font-semibold">Break Your Heart</span>
               </>
             ) : (
               <>
-                Sigues eligiendo el <span className="text-accent font-semibold">dolor</span> que{' '}
-                <span className="text-accent font-semibold">conoces</span>.<br />
-                Cambiemos <span className="text-accent font-semibold">eso</span>.
+                Por qué estás <span className="text-gradient whitespace-nowrap">magnéticamente atraída</span> por hombres que te <span className="font-semibold">romperán el corazón</span>
               </>
             )}
           </h1>
 
-          {/* Subtitle — gradient ONLY on Break / Rewire / Build */}
-          <div className="text-base md:text-xl lg:text-2xl font-medium leading-relaxed max-w-5xl mx-auto space-y-2 text-gray-700 [&_*]:text-gray-700">
-            <p>
-              <span className="font-bold text-gradient">{t('hero.subtitle.part1')}</span>
-              <span>{t('hero.subtitle.part2')}</span>
-              <span className="font-bold text-gradient">{t('hero.subtitle.rewires')}</span>
-              <span>{t('hero.subtitle.part3')}</span>
-            </p>
-            <p>
-              <span className="font-bold text-gradient">Build</span>{' '}
-              <span className="font-bold">{t('hero.subtitle.selfTrust')}</span>
-              <span>{part4Clean}</span>
-              <span className="font-bold">{t('hero.subtitle.safeLove')}</span>
-              <span>{t('hero.subtitle.part5')}</span>
-            </p>
+          {/* Subtitle — single line; gradient on the verb "rewires" */}
+          <div className="text-sm md:text-lg lg:text-xl font-medium leading-relaxed max-w-5xl mx-auto space-y-2 text-gray-700 [&_*]:text-gray-700">
+            {i18n.language === 'en' ? (
+              <p>
+                The 6-phase method that <span className="font-bold text-gradient whitespace-nowrap">rewires</span> toxic attraction patterns
+              </p>
+            ) : (
+              <p>
+                El método de 6 fases que <span className="font-bold text-gradient whitespace-nowrap">reprograma</span> patrones de atracción tóxicos
+              </p>
+            )}
           </div>
         </div>
 
         {/* Video — single column, minimal chrome; CONTROLS visible so users can unmute */}
-        <div className="max-w-3xl md:max-w-4xl mx-auto mb-8">
+        <div className="max-w-3xl md:max-w-4xl mx-auto mb-4 md:mb-6">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
               <iframe
@@ -128,7 +120,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Compact caption row */}
-          <div className="text-center mt-3 space-y-1">
+          <div className="text-center mt-2 space-y-1">
             <p className="text-sm text-gray-600">{t('hero.captionsAvailable')}</p>
             <div className="flex items-center justify-center gap-4 text-sm">
               <span className="flex items-center gap-1">
