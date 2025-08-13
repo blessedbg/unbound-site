@@ -7,7 +7,7 @@ import EarlyAccessBadge from './EarlyAccessBadge';
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
-  // --- YouTube embed config (autoplay muted; minimal chrome; EN captions/UI) ---
+  // YouTube embed (minimal chrome, EN UI/captions)
   const videoId = 'AHiT-tIk1uM';
   const videoSrc =
     `https://www.youtube-nocookie.com/embed/${videoId}` +
@@ -18,19 +18,17 @@ const HeroSection: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [needsSound, setNeedsSound] = useState(true);
 
-  // Try to enable sound automatically (some browsers allow it if user has interacted)
+  // Best-effort auto-unmute (some browsers still require a tap)
   useEffect(() => {
     const win = iframeRef.current?.contentWindow;
     if (!win) return;
     const post = (func: string, args: any[] = []) =>
       win.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
-
     const t1 = setTimeout(() => {
       post('playVideo');
       post('unMute');
       post('setVolume', [100]);
     }, 700);
-
     return () => clearTimeout(t1);
   }, []);
 
@@ -42,6 +40,10 @@ const HeroSection: React.FC = () => {
     win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
     setNeedsSound(false);
   };
+
+  // ---- Clean just the dash in the "in your body — and in" line ----
+  // We don't touch your JSON; we just remove any em/en/normal dash surrounding spaces in that string.
+  const part4Clean = t('hero.subtitle.part4').replace(/\s*[—–-]\s*/g, ' ');
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
@@ -59,7 +61,7 @@ const HeroSection: React.FC = () => {
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline — exact English wording you want, with pro sizing */}
+          {/* Headline (exact wording you want) */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
             {i18n.language === 'en' ? (
               <>
@@ -76,31 +78,25 @@ const HeroSection: React.FC = () => {
             )}
           </h1>
 
-          {/* Subtitle — gradient ONLY on Break / Rewire / Build */}
-          <div
-            className="
-              text-lg md:text-xl lg:text-2xl font-medium leading-relaxed
-              max-w-5xl mx-auto space-y-2
-              text-gray-700 [&_*]:text-gray-700
-            "
-          >
+          {/* Subtitle — gradient only on Break / Rewire / Build; dash removed from part4 */}
+          <div className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed max-w-5xl mx-auto space-y-2 text-gray-700 [&_*]:text-gray-700">
             <p>
-              <span className="font-bold text-gradient">{t('hero.subtitle.part1') /* Break */}</span>
-              <span>{t('hero.subtitle.part2') /*  the trauma bond.  */}</span>
-              <span className="font-bold text-gradient">{t('hero.subtitle.rewires') /* Rewire */}</span>
-              <span>{t('hero.subtitle.part3') /*  your patterns.  */}</span>
+              <span className="font-bold text-gradient">{t('hero.subtitle.part1')}</span>
+              <span>{t('hero.subtitle.part2')}</span>
+              <span className="font-bold text-gradient">{t('hero.subtitle.rewires')}</span>
+              <span>{t('hero.subtitle.part3')}</span>
             </p>
             <p>
               <span className="font-bold text-gradient">Build</span>{' '}
-              <span className="font-bold">{t('hero.subtitle.selfTrust') /* self-trust */}</span>
-              <span>{t('hero.subtitle.part4') /*  in your body — and in  */}</span>
-              <span className="font-bold">{t('hero.subtitle.safeLove') /* safe love */}</span>
+              <span className="font-bold">{t('hero.subtitle.selfTrust')}</span>
+              <span>{part4Clean /* now " in your body and in " (no dash) */}</span>
+              <span className="font-bold">{t('hero.subtitle.safeLove')}</span>
               <span>{t('hero.subtitle.part5')}</span>
             </p>
           </div>
         </div>
 
-        {/* Video Section — minimized branding, EN captions/UI, Sound-On pill */}
+        {/* Video Section — minimal branding, EN captions/UI, Sound-On pill */}
         <div className="max-w-4xl mx-auto mb-14 md:mb-16">
           <div className="video-container relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
@@ -144,7 +140,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section — mirrors Spanish; adds concise reassurance under button */}
+        {/* CTA Section */}
         <div className="text-center space-y-6 md:space-y-8">
           <CTAButton
             text={t('stickyButton')}
