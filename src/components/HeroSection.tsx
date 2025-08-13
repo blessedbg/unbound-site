@@ -1,11 +1,71 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Shield, Clock, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
 import EarlyAccessBadge from './EarlyAccessBadge';
 
 const HeroSection: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // --- Language for captions/UI (main=en, /es=es) ---
+  const lang = (i18n?.language || 'en').split('-')[0];
+  const hl = lang === 'es' ? 'es' : 'en';
+  const cc = hl;
+
+  // --- YouTube embed config ---
+  const videoId = 'AHiT-tIk1uM';
+  const params = new URLSearchParams({
+    autoplay: '1',          // start automatically
+    mute: '1',              // start muted so autoplay is allowed...
+    loop: '1',
+    playlist: videoId,      // required for loop
+    playsinline: '1',
+    controls: '1',
+    modestbranding: '1',
+    rel: '0',
+    cc_load_policy: '1',
+    cc_lang_pref: cc,       // captions language
+    hl,                     // player UI language
+    enablejsapi: '1',       // allow postMessage API
+  });
+  const videoSrc = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+
+  // --- Unmute logic: try to enable sound immediately; fall back to tap overlay if blocked ---
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [needsTap, setNeedsTap] = useState(false);
+
+  const post = (cmd: string, args: any[] = []) => {
+    const win = iframeRef.current?.contentWindow;
+    if (!win) return;
+    win.postMessage(JSON.stringify({ event: 'command', func: cmd, args }), '*');
+  };
+
+  // Try to play with sound (some browsers will allow; others will block until user gesture)
+  const tryEnableSound = () => {
+    post('unMute');
+    post('setVolume', [100]);
+    post('playVideo');
+  };
+
+  useEffect(() => {
+    // Give the player a moment to initialize, then attempt sound
+    const t1 = setTimeout(() => {
+      tryEnableSound();
+    }, 600);
+
+    // If sound was blocked, reveal the overlay prompt
+    const t2 = setTimeout(() => setNeedsTap(true), 1400);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
+  const handleTap = () => {
+    tryEnableSound();
+    setNeedsTap(false);
+  };
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
@@ -23,10 +83,12 @@ const HeroSection: React.FC = () => {
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline */}
+          {/* Main Headline (original structure) */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto">
             {t('hero.headline.part1')}{' '}
-            <span className="text-gradient">{t('hero.headline.part2')}</span>
+            <span className="text-gradient">
+              {t('hero.headline.part2')}
+            </span>
           </h1>
 
           {/* Subtitle */}
@@ -59,26 +121,38 @@ const HeroSection: React.FC = () => {
           <div className="video-container relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
               <iframe
+                ref={iframeRef}
                 className="w-full h-full"
-                src="https://www.youtube-nocookie.com/embed/AHiT-tIk1uM?autoplay=1&mute=1&loop=1&playlist=AHiT-tIk1uM&playsinline=1&controls=1&modestbranding=1&rel=0&cc_load_policy=1&cc_lang_pref=es&hl=es"
-                title="Unbound VSL (ES)"
+                src={videoSrc}
+                title={hl === 'es' ? 'Unbound VSL (ES)' : 'Unbound VSL (EN)'}
                 frameBorder={0}
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
               />
+              {needsTap && (
+                <button
+                  onClick={handleTap}
+                  aria-label={hl === 'es' ? 'Tocar para activar el sonido' : 'Tap to enable sound'}
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+                >
+                  <span className="px-5 py-3 rounded-full bg-white text-gray-900 font-semibold shadow-lg">
+                    {hl === 'es' ? 'Toca para activar el sonido 🔊' : 'Tap to enable sound 🔊'}
+                  </span>
+                </button>
+              )}
             </div>
           </div>
 
           {/* Video Caption */}
           <div className="text-center mt-6 space-y-2">
             <p className="text-sm text-gray-600">
-              {t('hero.captionsAvailable', 'Subtítulos disponibles')}
+              {t('hero.captionsAvailable', hl === 'es' ? 'Subtítulos disponibles' : 'Captions available')}
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <span className="flex items-center space-x-1">
                 <span className="w-3 h-2 bg-red-500 rounded-sm"></span>
-                <span className="text-gray-600">{t('hero.english', 'Inglés')}</span>
+                <span className="text-gray-600">{t('hero.english', 'English')}</span>
               </span>
               <span className="flex items-center space-x-1">
                 <span className="w-3 h-2 bg-yellow-500 rounded-sm"></span>
