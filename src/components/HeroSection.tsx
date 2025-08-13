@@ -67,14 +67,14 @@ const HeroSection: React.FC = () => {
         className="relative max-w-7xl mx-auto px-4 pb-10 md:pb-12"
         style={{ paddingTop: headerPad }}
       >
-        <div className="text-center space-y-4 mb-4">
+        <div className="text-center space-y-3 mb-3">
           {/* Early Access Badge */}
           <div className="flex justify-center">
             <EarlyAccessBadge />
           </div>
 
           {/* Main Headline — updated wording, slightly smaller for CTA visibility */}
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
+          <h1 className=\"text-xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
             {i18n.language === 'en' ? (
               <>
                 Why You&apos;re <span className="text-gradient whitespace-nowrap">Magnetically Drawn</span> to Men Who Will <span className="font-semibold">Break Your Heart</span>
@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subtitle — single line; gradient on the verb "rewires" */}
-          <div className="text-sm md:text-lg lg:text-xl font-medium leading-relaxed max-w-5xl mx-auto space-y-2 text-gray-700 [&_*]:text-gray-700">
+          <div className="text-xs md:text-base lg:text-lg font-medium leading-relaxed max-w-5xl mx-auto space-y-2 text-gray-700 [&_*]:text-gray-700">
             {i18n.language === 'en' ? (
               <p>
                 The 6-phase method that <span className="font-bold text-gradient whitespace-nowrap">rewires</span> toxic attraction patterns
@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Video — single column, minimal chrome; CONTROLS visible so users can unmute */}
-        <div className="max-w-3xl md:max-w-4xl mx-auto mb-4 md:mb-6">
+        <div className="max-w-3xl md:max-w-4xl mx-auto mb-3 md:mb-4">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
               <iframe
@@ -119,19 +119,6 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Compact caption row */}
-          <div className="text-center mt-2 space-y-1">
-            <p className="text-sm text-gray-600">{t('hero.captionsAvailable')}</p>
-            <div className="flex items-center justify-center gap-4 text-sm">
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-2 bg-red-500 rounded-sm" />
-                <span className="text-gray-600">{t('hero.english')}</span>
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-2 bg-yellow-500 rounded-sm" />
-                <span className="text-gray-600">{t('hero.spanish')}</span>
-              </span>
-            </div>
           </div>
         </div>
 
