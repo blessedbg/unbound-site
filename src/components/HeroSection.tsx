@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Shield, Clock, Zap, ChevronDown } from 'lucide-react';
+import { Shield, Clock, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
 import EarlyAccessBadge from './EarlyAccessBadge';
 
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
-  const scrollToNext = () => {
-    const nextSection = document.querySelector('#problem');
-    if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
+  // --- YouTube embed config (autoplay muted; minimal chrome; EN captions/UI) ---
+  const videoId = 'AHiT-tIk1uM';
+  const videoSrc =
+    `https://www.youtube-nocookie.com/embed/${videoId}` +
+    `?autoplay=1&mute=1&loop=1&playlist=${videoId}` +
+    `&playsinline=1&controls=0&modestbranding=1&rel=0` +
+    `&cc_load_policy=1&cc_lang_pref=en&hl=en&enablejsapi=1`;
+
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [needsSound, setNeedsSound] = useState(true);
+
+  // Try to enable sound automatically (some browsers allow it if user has interacted)
+  useEffect(() => {
+    const win = iframeRef.current?.contentWindow;
+    if (!win) return;
+    const post = (func: string, args: any[] = []) =>
+      win.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
+
+    const t1 = setTimeout(() => {
+      post('playVideo');
+      post('unMute');
+      post('setVolume', [100]);
+    }, 700);
+
+    return () => clearTimeout(t1);
+  }, []);
+
+  const enableSound = () => {
+    const win = iframeRef.current?.contentWindow;
+    if (!win) return;
+    win.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+    win.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+    win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+    setNeedsSound(false);
   };
 
   return (
@@ -21,15 +52,15 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-2000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 pt-20 pb-16">
-        <div className="text-center space-y-8 mb-16">
+      <div className="relative max-w-7xl mx-auto px-4 pt-16 md:pt-20 pb-16">
+        <div className="text-center space-y-8 md:space-y-10 mb-14 md:mb-16">
           {/* Early Access Badge */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center">
             <EarlyAccessBadge />
           </div>
 
-          {/* Main Headline — keep EXACT English wording/styling you liked */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto">
+          {/* Main Headline — exact English wording you want, with pro sizing */}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight md:leading-[1.15] tracking-tight max-w-5xl md:max-w-6xl mx-auto">
             {i18n.language === 'en' ? (
               <>
                 You keep choosing the <span className="text-accent font-semibold">pain</span> you{' '}
@@ -45,46 +76,55 @@ const HeroSection: React.FC = () => {
             )}
           </h1>
 
-          {/* Subtitle — gradient on Break / Rewire / Build */}
+          {/* Subtitle — gradient ONLY on Break / Rewire / Build */}
           <div
             className="
-              text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed
+              text-lg md:text-xl lg:text-2xl font-medium leading-relaxed
               max-w-5xl mx-auto space-y-2
-              text-gray-700
-              [&_*]:text-gray-700
+              text-gray-700 [&_*]:text-gray-700
             "
           >
             <p>
-              <span className="font-bold text-gradient">{t('hero.subtitle.part1')}</span>
-              <span>{t('hero.subtitle.part2')}</span>
-              <span className="font-bold text-gradient">{t('hero.subtitle.rewires')}</span>
-              <span>{t('hero.subtitle.part3')}</span>
+              <span className="font-bold text-gradient">{t('hero.subtitle.part1') /* Break */}</span>
+              <span>{t('hero.subtitle.part2') /*  the trauma bond.  */}</span>
+              <span className="font-bold text-gradient">{t('hero.subtitle.rewires') /* Rewire */}</span>
+              <span>{t('hero.subtitle.part3') /*  your patterns.  */}</span>
             </p>
             <p>
-              <span>Build </span>
-              <span className="font-bold text-gradient">{t('hero.subtitle.selfTrust')}</span>
-              <span>{t('hero.subtitle.part4')}</span>
-              <span className="font-bold text-gradient">{t('hero.subtitle.safeLove')}</span>
+              <span className="font-bold text-gradient">Build</span>{' '}
+              <span className="font-bold">{t('hero.subtitle.selfTrust') /* self-trust */}</span>
+              <span>{t('hero.subtitle.part4') /*  in your body — and in  */}</span>
+              <span className="font-bold">{t('hero.subtitle.safeLove') /* safe love */}</span>
               <span>{t('hero.subtitle.part5')}</span>
             </p>
           </div>
         </div>
 
-        {/* Video Section — mirrors Spanish embed, forced EN UI/captions */}
-        <div className="max-w-4xl mx-auto mb-16">
+        {/* Video Section — minimized branding, EN captions/UI, Sound-On pill */}
+        <div className="max-w-4xl mx-auto mb-14 md:mb-16">
           <div className="video-container relative rounded-2xl overflow-hidden shadow-2xl bg-black">
             <div className="aspect-video">
               <iframe
+                ref={iframeRef}
                 width="1296"
                 height="729"
                 style={{ maxWidth: '100%', height: 'auto', aspectRatio: '16 / 9', border: 0 }}
-                src="https://www.youtube-nocookie.com/embed/AHiT-tIk1uM?autoplay=1&mute=1&loop=1&playlist=AHiT-tIk1uM&playsinline=1&controls=0&modestbranding=1&rel=0&cc_load_policy=1&cc_lang_pref=en&hl=en"
+                src={videoSrc}
                 title="Unbound VSL (EN)"
                 frameBorder={0}
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
               />
+              {needsSound && (
+                <button
+                  onClick={enableSound}
+                  className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-white/90 hover:bg-white text-gray-900 text-sm font-semibold px-3 py-1.5 md:px-3.5 md:py-2 rounded-full shadow-md backdrop-blur-sm"
+                  aria-label="Enable sound"
+                >
+                  🔊 Sound on
+                </button>
+              )}
             </div>
           </div>
 
@@ -104,28 +144,29 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section — mirrors Spanish */}
-        <div className="text-center space-y-8">
+        {/* CTA Section — mirrors Spanish; adds concise reassurance under button */}
+        <div className="text-center space-y-6 md:space-y-8">
           <CTAButton
             text={t('stickyButton')}
-            className="btn-lg px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+            className="btn-lg px-10 md:px-12 py-4 text-lg md:text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-[1.02] transition-all duration-300"
           />
+          <p className="text-sm text-gray-600">14-Day Guarantee · Instant Access</p>
 
-          {/* Trust Indicators (Shield / Clock / Zap like Spanish) */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
-            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mt-6 md:mt-10">
+            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg border border-gray-100">
               <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" />
               </div>
               <span className="text-gray-700 font-semibold text-sm">{t('hero.trustIndicators.guarantee')}</span>
             </div>
-            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg border border-gray-100">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
                 <Clock className="w-4 h-4 text-white" />
               </div>
               <span className="text-gray-700 font-semibold text-sm">{t('hero.trustIndicators.instantAccess')}</span>
             </div>
-            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+            <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg border border-gray-100">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                 <Zap className="w-4 h-4 text-white" />
               </div>
@@ -133,17 +174,6 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Optional: Scroll Indicator if you want it on this layout */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 transform animate-bounce">
-        <button
-          onClick={scrollToNext}
-          className="w-10 h-10 border-2 border-slate-400 rounded-full flex items-center justify-center hover:border-slate-600 hover:bg-white/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-300 focus:ring-opacity-50"
-          aria-label="Scroll to learn about the problem we solve"
-        >
-          <ChevronDown className="w-5 h-5 text-slate-600" aria-hidden="true" />
-        </button>
       </div>
     </section>
   );
