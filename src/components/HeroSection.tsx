@@ -7,48 +7,32 @@ import EarlyAccessBadge from './EarlyAccessBadge';
 const HeroSection: React.FC = () => {
   const { t, i18n } = useTranslation();
 
-  // Language for captions/UI
+  // Language for captions/UI (EN on main, ES on /es)
   const lang = (i18n?.language || 'en').split('-')[0];
   const hl = lang === 'es' ? 'es' : 'en';
-  const cc = hl;
 
-  // Build YouTube URL (autoplay allowed because we start muted, then try to unmute)
+  // YouTube embed (autoplay allowed because we start muted; we then try to unmute)
   const videoId = 'AHiT-tIk1uM';
-  const params = new URLSearchParams({
-    autoplay: '1',
-    mute: '1',
-    loop: '1',
-    playlist: videoId,
-    playsinline: '1',
-    controls: '1',
-    modestbranding: '1',
-    rel: '0',
-    cc_load_policy: '1',
-    cc_lang_pref: cc,
-    hl,
-    enablejsapi: '1',
-  });
-  const videoSrc = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+  const videoSrc = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=1&modestbranding=1&rel=0&cc_load_policy=1&cc_lang_pref=${hl}&hl=${hl}&enablejsapi=1`;
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // Best-effort unmute shortly after load (some browsers will allow; others require user gesture)
+  // Best-effort unmute after load; some browsers will still require a click
   useEffect(() => {
     const win = iframeRef.current?.contentWindow;
     if (!win) return;
-    const post = (cmd: string, args: any[] = []) =>
-      win.postMessage(JSON.stringify({ event: 'command', func: cmd, args }), '*');
+    const post = (func: string, args: any[] = []) =>
+      win.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
 
     const t1 = setTimeout(() => {
       post('unMute');
       post('setVolume', [100]);
       post('playVideo');
-    }, 600);
+    }, 700);
 
     return () => clearTimeout(t1);
   }, []);
 
-  // Manual sound-on (one tap) for strict browsers
   const enableSound = () => {
     const win = iframeRef.current?.contentWindow;
     if (!win) return;
@@ -61,9 +45,9 @@ const HeroSection: React.FC = () => {
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float" />
-        <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply blur-xl opacity-30 animate-float delay-1000" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply blur-xl opacity-20 animate-float delay-2000" />
+        <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-2000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-20 pb-16">
@@ -73,10 +57,10 @@ const HeroSection: React.FC = () => {
             <EarlyAccessBadge />
           </div>
 
-          {/* Headline (robust gradient; no custom class needed) */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto tracking-tight">
+          {/* Main Headline — EXACTLY your original structure */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-6xl mx-auto">
             {t('hero.headline.part1')}{' '}
-            <span className="inline-block bg-gradient-to-r from-rose-600 via-fuchsia-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-gradient">
               {t('hero.headline.part2')}
             </span>
           </h1>
@@ -120,7 +104,7 @@ const HeroSection: React.FC = () => {
                 allowFullScreen
                 loading="lazy"
               />
-              {/* Small, unobtrusive Sound button for strict autoplay policies */}
+              {/* Tiny corner button to enable sound if the browser blocks it */}
               <button
                 type="button"
                 onClick={enableSound}
@@ -139,11 +123,11 @@ const HeroSection: React.FC = () => {
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <span className="flex items-center space-x-1">
-                <span className="w-3 h-2 bg-red-500 rounded-sm" />
+                <span className="w-3 h-2 bg-red-500 rounded-sm"></span>
                 <span className="text-gray-600">{t('hero.english', 'English')}</span>
               </span>
               <span className="flex items-center space-x-1">
-                <span className="w-3 h-2 bg-yellow-500 rounded-sm" />
+                <span className="w-3 h-2 bg-yellow-500 rounded-sm"></span>
                 <span className="text-gray-600">{t('hero.spanish', 'Español')}</span>
               </span>
             </div>
