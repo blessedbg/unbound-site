@@ -31,6 +31,16 @@
     <link rel="alternate" hreflang="es" href="https://herlifeunbound.com/es" />
     <link rel="alternate" hreflang="x-default" href="https://herlifeunbound.com" />
   </head>
+
+  <!-- Netlify Forms detection -->
+<form name="support-chat" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="support-chat" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+  <input type="text" name="language" />
+  <input type="text" name="subject" />
+</form>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
