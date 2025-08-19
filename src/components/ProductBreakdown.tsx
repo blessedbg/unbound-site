@@ -48,47 +48,15 @@ const ProductBreakdown: React.FC = () => {
   const { t } = useTranslation();
 
   const phases = [
-    {
-      icon: PhaseIcon1,
-      title: t('productBreakdown.phases.phase1.title'),
-      description: t('productBreakdown.phases.phase1.description'),
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
-      icon: PhaseIcon2,
-      title: t('productBreakdown.phases.phase2.title'),
-      description: t('productBreakdown.phases.phase2.description'),
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      icon: PhaseIcon3,
-      title: t('productBreakdown.phases.phase3.title'),
-      description: t('productBreakdown.phases.phase3.description'),
-      color: 'from-yellow-500 to-orange-600'
-    },
-    {
-      icon: PhaseIcon4,
-      title: t('productBreakdown.phases.phase4.title'),
-      description: t('productBreakdown.phases.phase4.description'),
-      color: 'from-pink-500 to-rose-600'
-    },
-    {
-      icon: PhaseIcon5,
-      title: t('productBreakdown.phases.phase5.title'),
-      description: t('productBreakdown.phases.phase5.description'),
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      icon: PhaseIcon6,
-      title: t('productBreakdown.phases.phase6.title'),
-      description: t('productBreakdown.phases.phase6.description'),
-      color: 'from-red-500 to-pink-600'
-    }
+    { icon: PhaseIcon1, title: t('productBreakdown.phases.phase1.title'), description: t('productBreakdown.phases.phase1.description'), color: 'from-blue-500 to-indigo-600' },
+    { icon: PhaseIcon2, title: t('productBreakdown.phases.phase2.title'), description: t('productBreakdown.phases.phase2.description'), color: 'from-purple-500 to-pink-600' },
+    { icon: PhaseIcon3, title: t('productBreakdown.phases.phase3.title'), description: t('productBreakdown.phases.phase3.description'), color: 'from-yellow-500 to-orange-600' },
+    { icon: PhaseIcon4, title: t('productBreakdown.phases.phase4.title'), description: t('productBreakdown.phases.phase4.description'), color: 'from-pink-500 to-rose-600' },
+    { icon: PhaseIcon5, title: t('productBreakdown.phases.phase5.title'), description: t('productBreakdown.phases.phase5.description'), color: 'from-green-500 to-emerald-600' },
+    { icon: PhaseIcon6, title: t('productBreakdown.phases.phase6.title'), description: t('productBreakdown.phases.phase6.description'), color: 'from-red-500 to-pink-600' }
   ];
 
   const bonuses = t('productBreakdown.bonuses', { returnObjects: true }) as string[];
-
-  // Ensure bonuses is always an array
   const safeBonuses = Array.isArray(bonuses) ? bonuses : [];
 
   return (
@@ -106,14 +74,14 @@ const ProductBreakdown: React.FC = () => {
         {/* Enhanced Phase Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {phases.map((phase, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group relative bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${phase.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-              
+
               <div className="relative z-10 flex items-start space-x-4">
                 <div className={`w-16 h-16 bg-gradient-to-br ${phase.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <phase.icon />
@@ -122,9 +90,7 @@ const ProductBreakdown: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors duration-300">
                     {phase.title}
                   </h3>
-                  {index === 0 && (
-                    <p className="text-sm italic mt-2">Phase 1 content unlocks on <strong>August 15, 2025</strong>.</p>
-                  )}
+                  {/* Removed the 'Phase 1 unlocks on Aug 15, 2025' line */}
                   <p className="text-gray-600 leading-relaxed text-sm">
                     {phase.description}
                   </p>
@@ -139,25 +105,25 @@ const ProductBreakdown: React.FC = () => {
 
         {/* Enhanced Bonuses Section */}
         <div className="hidden bg-gradient-to-br from-gray-50 to-pink-50 rounded-2xl p-8 mb-12 border border-pink-100">
-            <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mr-3">
-                <CheckCircle className="w-5 h-5 text-white" />
-              </div>
-              {t('productBreakdown.bonusesTitle')}
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {safeBonuses.map((bonus, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-start space-x-3 bg-white/80 backdrop-blur-sm rounded-lg p-4 hover:bg-white transition-colors duration-300 border border-white/60"
-                >
-                  <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <p className="text-gray-700 font-medium text-sm leading-relaxed">{bonus}</p>
-                </div>
-              ))}
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mr-3">
+              <CheckCircle className="w-5 h-5 text-white" />
             </div>
+            {t('productBreakdown.bonusesTitle')}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {safeBonuses.map((bonus, index) => (
+              <div
+                key={index}
+                className="flex items-start space-x-3 bg-white/80 backdrop-blur-sm rounded-lg p-4 hover:bg-white transition-colors duration-300 border border-white/60"
+              >
+                <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-4 h-4 text-white" />
+                </div>
+                <p className="text-gray-700 font-medium text-sm leading-relaxed">{bonus}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
