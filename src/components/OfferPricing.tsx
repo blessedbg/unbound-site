@@ -38,27 +38,47 @@ const OfferPricing: React.FC = () => {
               
               <div className="text-center mb-12">
                 <div className="mb-4">
-                  <span className="text-6xl md:text-7xl font-bold text-white text-shadow-strong">{t('pricing.earlyAccessPrice')}</span>
+                  {/* Hardcoded to match your Whop one-time price */}
+                  <span className="text-6xl md:text-7xl font-bold text-white text-shadow-strong">$197</span>
                 </div>
                 <p className="text-2xl text-white font-bold text-shadow-glow mb-2">Early Access Price</p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white/10 rounded-2xl p-8 text-center border-2 border-green-400 shadow-lg">
+                {/* ONE-TIME PURCHASE TILE (clickable) */}
+                <a
+                  href="https://whop.com/checkout/plan_3FvyJwPtB8nvp?d2c=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Proceed to Whop checkout for one-time purchase ($197)"
+                  className="block bg-white/10 rounded-2xl p-8 text-center border-2 border-green-400 shadow-lg hover:bg-white/15 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 cursor-pointer"
+                  data-cta="checkout-onetime"
+                  role="button"
+                >
                   <div className="text-green-400 font-bold text-sm mb-2">BEST VALUE</div>
                   <div className="flex items-center justify-center mb-4">
-                    <span className="text-3xl font-bold text-white">{t('pricing.earlyAccessPrice')}</span>
+                    <span className="text-3xl font-bold text-white">$197</span>
                   </div>
                   <p className="text-white font-semibold">One-time payment</p>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-8 text-center shadow-lg">
-                  <div className="flex items-center justify-center mb-4">
-                    <span className="text-3xl font-bold text-white">{t('pricing.earlyAccessMonthly')}</span>
+                </a>
+
+                {/* 3-PAY PLAN TILE (clickable) */}
+                <a
+                  href="https://whop.com/checkout/plan_tn8U1Uj6e9cxd?d2c=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Proceed to Whop checkout for 3 monthly payments of $77"
+                  className="block bg-white/10 rounded-2xl p-8 text-center shadow-lg hover:bg-white/15 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 cursor-pointer"
+                  data-cta="checkout-3pay"
+                  role="button"
+                >
+                  <div className="flex items-center justify-center mb-1">
+                    <span className="text-3xl font-bold text-white">$77</span>
                     <span className="text-white/80 ml-1">/mo</span>
                   </div>
                   <p className="text-white font-semibold">3 monthly payments</p>
-                  <p className="text-white/80 text-sm">Start today for just {t('pricing.earlyAccessMonthly')}</p>
-                </div>
+                  <p className="text-white/80 text-sm">Start today for just $77</p>
+                </a>
               </div>
 
               <div className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-2xl p-10 border border-yellow-400/30 shadow-lg">
@@ -72,31 +92,6 @@ const OfferPricing: React.FC = () => {
                   Emotional Check-In Deck™ (Value: $47) - FREE
                 </p>
               </div>
-
-              {/* CTA BUTTONS — embedded Whop links */}
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                <a
-                  href="https://whop.com/checkout/plan_3FvyJwPtB8nvp?d2c=true"
-                  className="inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 bg-white text-rose-900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Proceed to Whop checkout for one-time purchase"
-                  data-cta="checkout-onetime"
-                >
-                  Get Unbound — One-Time Purchase
-                </a>
-
-                <a
-                  href="https://whop.com/checkout/plan_tn8U1Uj6e9cxd?d2c=true"
-                  className="inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold border border-white/40 hover:border-white transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 bg-transparent text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Proceed to Whop checkout for 3 monthly payments of $77"
-                  data-cta="checkout-3pay"
-                >
-                  Start with Payment Plan — 3× $77
-                </a>
-              </div>
               <p className="text-center text-white/70 text-sm mt-3">Secure Whop checkout · Opens in a new tab</p>
             </div>
           ) : (
@@ -109,47 +104,37 @@ const OfferPricing: React.FC = () => {
               </div>
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white/10 rounded-2xl p-8 text-center shadow-lg">
+                {/* Wrap standard tiles too, if you’ll keep same plans post-launch */}
+                <a
+                  href="https://whop.com/checkout/plan_3FvyJwPtB8nvp?d2c=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white/10 rounded-2xl p-8 text-center shadow-lg hover:bg-white/15 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 cursor-pointer"
+                  data-cta="checkout-onetime"
+                  role="button"
+                >
                   <div className="flex items-center justify-center mb-4">
                     <span className="text-3xl font-bold text-white">{t('pricing.standardPrice')}</span>
                   </div>
                   <p className="text-white font-semibold">One-time payment</p>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-8 text-center shadow-lg">
-                  <div className="flex items-center justify-center mb-4">
+                </a>
+
+                <a
+                  href="https://whop.com/checkout/plan_tn8U1Uj6e9cxd?d2c=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white/10 rounded-2xl p-8 text-center shadow-lg hover:bg-white/15 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 cursor-pointer"
+                  data-cta="checkout-3pay"
+                  role="button"
+                >
+                  <div className="flex items-center justify-center mb-1">
                     <span className="text-3xl font-bold text-white">{t('pricing.standardMonthly')}</span>
                     <span className="text-white/80 ml-1">/mo</span>
                   </div>
                   <p className="text-white font-semibold">3 monthly payments</p>
                   <p className="text-white/80 text-sm">Start today for just {t('pricing.standardMonthly')}</p>
-                </div>
-              </div>
-
-              {/* CTA BUTTONS — using same Whop links unless you change plans post-launch */}
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                <a
-                  href="https://whop.com/checkout/plan_3FvyJwPtB8nvp?d2c=true"
-                  className="inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 bg-white text-rose-900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Proceed to Whop checkout for one-time purchase"
-                  data-cta="checkout-onetime"
-                >
-                  Get Unbound — One-Time Purchase
-                </a>
-
-                <a
-                  href="https://whop.com/checkout/plan_tn8U1Uj6e9cxd?d2c=true"
-                  className="inline-flex items-center justify-center rounded-xl px-6 py-4 text-base font-semibold border border-white/40 hover:border-white transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 bg-transparent text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Proceed to Whop checkout for 3 monthly payments of $77"
-                  data-cta="checkout-3pay"
-                >
-                  Start with Payment Plan — 3× $77
                 </a>
               </div>
-              <p className="text-center text-white/70 text-sm mt-3">Secure Whop checkout · Opens in a new tab</p>
             </div>
           )}
         </div>
