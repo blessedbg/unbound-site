@@ -7,13 +7,13 @@
     "language": "Language"
   },
   "earlyAccess": {
-    "banner": "Limited Early Access · Phase 1 unlocks Aug 15 2025",
-    "badge": "Phase 1 · Drops Aug 15",
+    "banner": "Limited Early Access · Phase 2 unlocks Sept 15 2025",
+    "badge": "Phase 2 · Drops Sept 15",
     "notice": {
       "headline": "You're Getting Early Access",
-      "description": "Phase 1 rollout — arriving August 15 2025 — plus locked-in pricing and limited-time bonuses not available later.",
+      "description": "Phase 2 rollout — arriving September 15 2025 — plus locked-in pricing and limited-time bonuses not available later.",
       "benefits": [
-        "Access to Phase 1 on launch",
+        "Access to Phase 2 on launch",
         "All future phases monthly",
         "Lifetime membership"
       ]
@@ -234,7 +234,7 @@
     "bonuses": [
       "Comprehensive Workbook with exercises and reflection prompts",
       "Quick Reference Cheat Sheets for dating situations",
-      "Emotional Check-In Deck™ (52 cards for daily awareness)",
+      "Emotional Check-In Deck™ (30 cards for daily awareness)",
       "Trigger Response Scripts for difficult conversations",
       "Boundary Setting Templates and examples"
     ]
@@ -364,7 +364,7 @@
     "error": "Error sending message. Please email support@herlifeunbound.com directly."
   },
   "seo": {
-    "title": "Her Life Unbound - Early Access | Transform Your Love Life - Phase 1 Launches Aug 15",
+    "title": "Her Life Unbound - Early Access | Transform Your Love Life - Phase 2 Launches Sept 15",
     "description": "Early Access to the trauma-informed dating transformation method. Phase 1 launches August 15, 2025. Rewire your patterns, break trauma bonds, attract healthy love. Limited founder spots available."
   }
 }
