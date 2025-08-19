@@ -51,9 +51,12 @@ const FinalCTA: React.FC = () => {
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold mb-6 text-gray-900">{t('finalCTA.productTitle')}</h3>
             <div className="flex items-center justify-center mb-6">
-              <span className="text-5xl font-bold text-primary">{t('pricing.earlyAccessPrice')}</span>
+              {/* Hardcoded to match Whop one-time checkout */}
+              <span className="text-5xl font-bold text-primary">$197</span>
             </div>
-            <p className="text-gray-600 font-medium mt-2">{t('pricing.paymentPlan')} {t('pricing.earlyAccessMonthly')}</p>
+            <p className="text-gray-600 font-medium mt-2">
+              {t('pricing.paymentPlan')} $77/month (3 months)
+            </p>
           </div>
 
           {/* Bonus */}
@@ -71,18 +74,41 @@ const FinalCTA: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="space-y-8">
-            <CTAButton 
-              text={t('finalCTA.primaryCTA')}
-              variant="primary"
-              className="btn-lg w-full text-2xl py-8 animate-pulse shadow-2xl rounded-2xl"
+            <a
+              href="https://whop.com/checkout/plan_3FvyJwPtB8nvp?d2c=true"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={t('finalCTA.primaryCTA')}
-            />
-            <CTAButton 
-              text={t('finalCTA.secondaryCTA')}
-              variant="secondary"
-              className="btn-lg w-full text-xl py-6 rounded-2xl"
+              data-cta="checkout-onetime"
+              className="block"
+            >
+              <CTAButton 
+                text={t('finalCTA.primaryCTA')}
+                variant="primary"
+                className="btn-lg w-full text-2xl py-8 animate-pulse shadow-2xl rounded-2xl"
+                aria-label={t('finalCTA.primaryCTA')}
+              />
+            </a>
+
+            <a
+              href="https://whop.com/checkout/plan_tn8U1Uj6e9cxd?d2c=true"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={t('finalCTA.secondaryCTA')}
-            />
+              data-cta="checkout-3pay"
+              className="block"
+            >
+              <CTAButton 
+                text={t('finalCTA.secondaryCTA')}
+                variant="secondary"
+                className="btn-lg w-full text-xl py-6 rounded-2xl"
+                aria-label={t('finalCTA.secondaryCTA')}
+              />
+            </a>
+
+            <p className="text-center text-white/70 text-sm">
+              Secure Whop checkout · Opens in a new tab
+            </p>
           </div>
         </div>
 
@@ -96,7 +122,7 @@ const FinalCTA: React.FC = () => {
           </p>
         </div>
         
-        {/* Brand Logo - Sleek styling */}
+        {/* Brand Logo */}
         <div className="text-center mb-20 animate-fade-in-up delay-500 bg-white/10 backdrop-blur-sm rounded-2xl py-8 px-12 border border-white/20 max-w-md mx-auto">
           <img 
             src="/Unbound Logo.png" 
