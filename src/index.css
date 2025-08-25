@@ -718,3 +718,82 @@ body {
 .space-x-4 > * + * { margin-left: var(--space-4); }
 .space-x-6 > * + * { margin-left: var(--space-6); }
 .space-x-8 > * + * { margin-left: var(--space-8); }
+/* === Brand Lock & Layout Harmonizer === */
+
+/* 1) Set site background to a solid brand canvas (more uniform than a big gradient) */
+body {
+  background: var(--unbound-cream);
+  color: var(--unbound-gray-800);
+}
+
+/* 2) Headings always dark (readable over light backgrounds) */
+h1,h2,h3,h4 {
+  color: var(--unbound-gray-900);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* 3) Limit gradient text to headline moments only */
+.text-gradient,
+.text-contrast-medium,
+.text-contrast-bold {
+  /* use only on short headings/subheads; avoid paragraphs */
+}
+.text-shadow-glow,
+.text-shadow-strong {
+  /* reserve for dark/video backgrounds only */
+}
+
+/* 4) Aspect-ratio helpers for perfectly uniform images & video */
+.aspect { position: relative; display:block; overflow:hidden; border-radius: var(--radius-xl); }
+.aspect > img,
+.aspect > picture,
+.aspect > video,
+.aspect > iframe { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.aspect-16x9 { padding-top:56.25%; }
+.aspect-4x3  { padding-top:75%; }
+.aspect-1x1  { padding-top:100%; }
+.aspect-3x4  { padding-top:133.333%; }
+
+/* 5) Image polish (border + subtle shadow as needed) */
+.img { display:block; width:100%; height:auto; border-radius: var(--radius-xl); }
+.img--border { border:1px solid var(--unbound-gray-200); }
+.img--shadow { box-shadow: var(--shadow-lg); }
+
+/* 6) Grid utility for 3-up blocks (collapses on mobile) */
+.grid-3 {
+  display:grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px){ .grid-3 { grid-template-columns: 1fr; } }
+
+/* 7) Icon standardization: all SVGs follow text color automatically */
+svg { width:1.1em; height:1.1em; stroke: currentColor; fill: none; }
+
+/* 8) Hero video overlay for readability (works with your .video-container) */
+.hero-overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 100%);
+  pointer-events:none;
+}
+.hero-content {
+  position:absolute; inset:0; display:grid; place-items:center;
+  text-align:center; padding: clamp(1rem, 4vw, 3rem);
+}
+.hero-content h1, .hero-content p { color:#fff; text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+
+/* 9) Section canvas: use cream or white only for cohesion */
+.section { background: var(--unbound-cream); }
+.section--white { background: var(--unbound-white); }
+
+/* 10) Buttons: keep just two styles site-wide */
+.btn { border-radius: var(--radius-xl); }
+.btn-primary { background: linear-gradient(135deg, var(--unbound-primary) 0%, var(--unbound-rose) 100%); color:#fff; }
+.btn-secondary { background:#fff; color:var(--unbound-primary); border:2px solid var(--unbound-primary); }
+
+/* 11) Optional: tone down global animations for calm, premium feel */
+.animate-fade-in-up, .animate-fade-in, .animate-slide-in-left {
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
